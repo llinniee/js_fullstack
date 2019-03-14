@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="practice" id = "pra">练习</div>
+    <script>
+        const practice1 = document.querySelector('practice');
+        practice1.onclick = function () {
+            this.innerHTML = 'HELLO World';
+            this.classList.add('active');
+        }
+
+        const pra = document.getElementById('pra');
+        pra.onclick = function () {
+            this.innerHTML = 'Hello';
+            this.classList.add('active');
+        }
+
+        
+    </script>
+</body>
+</html>
