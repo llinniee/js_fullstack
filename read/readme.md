@@ -21,3 +21,20 @@ Function {}
 toFixed(2)取两位小数
 
 Math.floor(Math.random()*(max-min)) + min
+
+##2019.3.15
+animation: titleIn .25s 0s linear forwards;
+.25表示持续时间
+linear规定动画从头到尾的速度是相同的。
+
+ animation 和 transition 里面都可以写 transform ，transform只是一个静态属性。要实现动画还是要结合animation和transition来实现。
+ transform-origin: 6.859375rem 32.90625rem;改变旋转点
+animation
+ ease规定慢速开始，然后变快，然后慢速结束的过渡效果
+
+ease-in规定以慢速开始的过渡效果
+
+ease-out规定以慢速结束的过渡效果
+
+ease-in-out规定以慢速开始和结束的过渡效果
+
