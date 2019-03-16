@@ -38,3 +38,13 @@ ease-out规定以慢速结束的过渡效果
 
 ease-in-out规定以慢速开始和结束的过渡效果
 
+audio 属性 autopaly loop control
+ 类名切换
+ musicBtn.classList.remove('off');
+ musicBtn.classList.add('off');
+ musicBtn.classList.toggle('off');
+
+
+ #svg icon
+ icon 可以用图片 但是体积大， 要下载
+ svg字节 图片是kb 图标就用svg
