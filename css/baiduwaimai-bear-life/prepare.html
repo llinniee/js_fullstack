@@ -9,11 +9,20 @@
         #box {
         width:200px;
         height:200px;
-        background-color:aqua;
-        margin:200px auto;
-        transition: all .3s;
+        /* background-color:aqua; */
+        /* margin:200px auto; */
+        /* transition: all .3s;
         transform-origin: 0 0;
-        transform: rotateX(20deg);
+        transform: rotateX(20deg); */
+        animation: move 3s steps(4);
+        }
+        @keyframes move {
+            0% {
+                transform: translateX();
+            }
+            100% {
+                transform: translateX();
+            }
         }
     </style>      
 </head>

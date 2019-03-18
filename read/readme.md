@@ -48,3 +48,27 @@ audio 属性 autopaly loop control
  #svg icon
  icon 可以用图片 但是体积大， 要下载
  svg字节 图片是kb 图标就用svg
+ polyline 折线 
+ daaharray 虚线与实线
+
+
+#百度css格式化 
+open in tab 打开代码
+animation里的属性 steps()将一的段数分段行走
+
+#css的命名词汇
+feeds -item content
+- html结构及布局
+从上到下从左到右 ，语义化和功能
+a,span标签是一个行内元素
+#套路
+content>h3+p
+舍得做盒子
+a作为盒子，在移动端是很正常的（display:block)
+行高line-height是两行汉字之间的距离   padding margin line-hight
+盒子模型
+
+
+
+
+
