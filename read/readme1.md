@@ -8,3 +8,34 @@ const常量是块级作用域，很像使用 let 语句定义的变量。常量�
 
 getBoundingClientRect是DOM元素到浏览器可视范围的距离（不包含文档卷起的部分）。该函数返回一个Object对象，该对象有6个属性：top,lef,right,bottom,width,height；这里的top、left和css中的理解很相似，width、height是元素自身的宽高，但是right，bottom和css中的理解有点不一样。right是指元素右边界距窗口最左边的距离，bottom是指元素下边界距窗口最上面的距离。
 diffX = 鼠标的x坐标 - 元素对象的offset.Left 
+
+setTimeout()可以用来在指定的时间之后单次调用函数。
+clearTimeout();取消函数的执行
+setInterval()可以用来指定的时间之后重复调用函数。
+clearInterval(); //取消函数的调用
+
+audio 属性 autopaly loop control
+ 类名切换
+ musicBtn.classList.remove('off');
+ musicBtn.classList.add('off');
+ musicBtn.classList.toggle('off');
+
+
+#stylus 预编译语言 .styl
+npm stall -g stylus 安装stylus
+在浏览器端运行的是css
+前端工作流在发生改变
+界面开发工作被重新定义，从小米加步枪变生产线
+-w stylus common.styl -o common.css 监听文件修改同时修改
+stylus起到了编译作用 -o 输出
+stylus 提供了css不具备的变量定义，模块化，函数，快捷  新的语法。
+1.变量
+2.减少输入{} ： ;
+3.函数
+4.嵌套
+    .book-bought 购买模块
+        .label
+            img
+    & 引用上一级的层次类名，同时可以缩进
+    省去重复上一次的选择
+
