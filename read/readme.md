@@ -181,10 +181,21 @@ overflow:auto scroll hidden;}
 html用来组织文本
 svg用来绘制图形的 矢量图 更小 path 动画更丰富
 
-4.9
+4.9 喻
 快点看到页面，将页面分成几件事
 html + css 静态页面
 将js jquery Vue等框架，100kb，下载，要执行，要花时间（几十毫秒，几百，或几秒）
 window.onload
 document.DOMContentLoaded 是js最佳也是最快执行的地方
 图片资源 js资源， ajax请求资源 网络依次到达浏览器 不应该影响页面DOM ready
+
+4.10 喻
+预加载是完成游戏之前的感受
+资源分为两种
+精灵图片独立
+
+游戏第一步，先让角色动起来
+game 对象 背景 精灵 动画 Phaser给了友好的API 逻辑
+preload 预加载
+creat 创建游戏场景
+update 更新游戏场景
