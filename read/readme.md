@@ -199,3 +199,35 @@ game 对象 背景 精灵 动画 Phaser给了友好的API 逻辑
 preload 预加载
 creat 创建游戏场景
 update 更新游戏场景
+
+4.11 喻
+将js走向后端
+没有DOM
+有命令行 有服务器
+文件系统
+代码的书写顺序和执行不一样
+如何确保顺序
+回调解决带来了回调地狱 可读性很差
+使用Promise 
+拆分promise来理解
+-解决耗时这一类问题 new Project
+问题解决后，控制权的转移，能够得以控制，js是一个单线程语言
+resolve => then
+resolve(data)
+代码的编写顺序和执行顺序是一致的。异步问题就变成同步的了。
+callback 读很难
+reject I/O等操作有可能发生问题
+多个文件确保执行顺序 then链
+在每个promise then里返回一个promise
+如果我们要让多个文件迸发去执行 当所有文件都读取完，再执行？
+
+
+canvas 绘图API
+首先，我们要知道实现动画的步骤，一般分为四步：
+清空canvas（使用clearRect()或全图绘制）
+保存canvas状态（可选）
+绘制动画图形
+恢复canvas状态（一般在第二步的基础上使用）
+著作权归作者所有。
+商业转载请联系作者获得授权,非商业转载请注明出处。
+原文: http://ghmagical.com/article/page/id/rf5VpT3YQPpN © ghmagical.com
