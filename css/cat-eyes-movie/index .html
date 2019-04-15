@@ -86,54 +86,19 @@
     </section>
     <!-- section3 -->
     <section class="section-seperate">
-      <p class="action-list section-til">
-        <ul class="movie-celebrities">
-          <li>
-            <a href="#" class="link">
-              <div class="movie-celebrities_pic">
-                <img
-                  src="http://p1.meituan.net/moviemachine/6e06b1eee9a74c9573fdb8150fb8561271624.jpg@130w_180h.webp                "
-                  alt="">
-              </div>
-              <span class="movie-celebrities_nick">weeeeee</span>
-              <span class="movie-celebrities_roles">dhskafb</span>
-            </a>
-          </li>
-          <li>
-            <a href="#" class="link">
-              <div class="movie-celebrities_pic">
-                <img
-                  src="http://p1.meituan.net/moviemachine/6e06b1eee9a74c9573fdb8150fb8561271624.jpg@130w_180h.webp                "
-                  alt="">
-              </div>
-              <span class="movie-celebrities_nick">weeeeee</span>
-              <span class="movie-celebrities_roles">dhskafb</span>
-            </a>
-          </li>
-          <li>
-            <a href="#" class="link">
-              <div class="movie-celebrities_pic">
-                <img
-                  src="http://p1.meituan.net/moviemachine/6e06b1eee9a74c9573fdb8150fb8561271624.jpg@130w_180h.webp                "
-                  alt="">
-              </div>
-              <span class="movie-celebrities_nick">weeeeee</span>
-              <span class="movie-celebrities_roles">dhskafb</span>
-            </a>
-          </li>
-          <li>
-            <a href="#" class="link">
-              <div class="movie-celebrities_pic">
-                <img
-                  src="http://p1.meituan.net/moviemachine/6e06b1eee9a74c9573fdb8150fb8561271624.jpg@130w_180h.webp                "
-                  alt="">
-              </div>
-              <span class="movie-celebrities_nick">weeeeee</span>
-              <span class="movie-celebrities_roles">dhskafb</span>
-            </a>
-          </li>
-        </ul>
-      </p>
+      <p class="action-list section-til">演职人员</p>
+      <ul class="movie-celebrities">
+        <!-- <li>
+          <a href="#" class="link">
+            <div class="movie-celebrities__pic">
+              <img src="http://p1.meituan.net/moviemachine/6e06b1eee9a74c9573fdb8150fb8561271624.jpg@130w_180h.webp"
+                alt="">
+            </div>
+            <span class="movie-celebrities__nick">qweqw</span>
+            <span class="movie-celebrities__roles">dsfsd</span>
+          </a>
+        </li> -->
+      </ul>
     </section>
     <!-- section4 -->
     <section class="movie-booking section-seperate section-expander">
@@ -141,52 +106,106 @@
       <div class="weui-flex">
         <div class="weui-flex__item">
           <div class="placeholder">
-            <span>1</span>
+            <span id="ranking"></span>
             <p>昨日票房排行</p>
           </div>
         </div>
         <div class="weui-flex__item">
           <div class="placeholder">
-            <span id="ranking">3213</span>
+            <span id="bookingWeek"></span>
             <p>首周票房（万）</p>
           </div>
         </div>
         <div class="weui-flex__item">
           <div class="placeholder">
-            <span>3232</span>
+            <span id="bookingTotal"></span>
             <p>累计票房（万）</p>
           </div>
         </div>
       </div>
-
     </section>
     <!-- section5 -->
     <section class="movie-photo section-seperate">
       <p class="action-list section-til">视频和剧照</p>
-      <ul class="movie-photo_lists">
-        <li class="stage-img-container">
+      <ul class="movie-photo__lists">
+        <!-- <li class="stage-img-container">
           <a href="#" class="link">
-            <div class="movie-celebrities_pic">
-              <img src="http://p1.meituan.net/moviemachine/6e06b1eee9a74c9573fdb8150fb8561271624.jpg@130w_180h.webp"
-                alt="">
+            <div class="movie-celebrities__pic">
+              <img src="http://p1.meituan.net/moviemachine/6e06b1eee9a74c9573fdb8150fb8561271624.jpg@130w_180h.webp" alt="">
             </div>
           </a>
+        </li> -->
+      </ul>
+    </section>
+    <!-- section6 -->
+    <section class="section-seperate section-expander">
+      <p class="section-til pos_r">讨论
+        <span class="join-comment">参与讨论</span>
+      </p>
+      <ul class="movie-comment">
+        <li class="comment-item">
+          <div class="comment-item_sort">
+            <span>全部</span>
+            <span class="comment-item_num"></span>
+          </div>
         </li>
-        <li class="stage-img-container">
-          <a href="#" class="link">
-            <div class="movie-celebrities_pic">
-              <img src="http://p1.meituan.net/moviemachine/6e06b1eee9a74c9573fdb8150fb8561271624.jpg@130w_180h.webp"
-                alt="">
-            </div>
-          </a>
+        <li class="comment-item">
+          <div class="comment-item_sort">
+            <span>好评</span>
+            <span class="comment-item_num"></span>
+          </div>
         </li>
-        <li class="stage-img-container">
-          <a href="#" class="link">
-            <div class="movie-celebrities_pic">
-              <img src="http://p1.meituan.net/moviemachine/6e06b1eee9a74c9573fdb8150fb8561271624.jpg@130w_180h.webp"
-                alt="">
+        <li class="comment-item">
+          <div class="comment-item_sort">
+            <span>差评</span>
+            <span class="comment-item_num"></span>
+          </div>
+        </li>
+        <li class="comment-item">
+          <div class="comment-item_sort">
+            <span>点映</span>
+            <span class="comment-item_num"></span>
+          </div>
+        </li>
+        <li class="comment-item">
+          <div class="comment-item_sort">
+            <span>购票</span>
+            <span class="comment-item_num"></span>
+          </div>
+        </li>
+        <li class="comment-item">
+          <div class="comment-item_sort">
+            <span>认证作者</span>
+            <span class="comment-item_num"></span>
+          </div>
+        </li>
+        <li class="comment-item">
+          <div class="comment-item_sort">
+            <span>同城</span>
+            <span class="comment-item_num"></span>
+          </div>
+        </li>
+      </ul>
+    </section>
+    <!-- section7 -->
+    <section class="section-seperate section-expander">
+      <p class="section-til">精选</p>
+      <ul class="chosen-comment" id="chosen-comment">
+        <li class="chosen-comment__item">
+          <div class="item-avatal">
+            <img src="http://img5.duitang.com/uploads/item/201408/14/20140814165959_VCtan.thumb.700_0.png " alt="">
+          </div>
+          <div class="item-detail">
+            <div class="item-detail__hd">
+              <div>
+                <span class="nick-name">昵称</span>
+                <span class="level">
+                  <img src="" alt="">
+                </span>
+              </div>
+              <p class="item-score__desc">给电影打了<span>10</span>分</p>
             </div>
-          </a>
+          </div>
         </li>
       </ul>
     </section>
@@ -198,11 +217,12 @@
         <p class="weui-toast__content">已标记为想看</p>
       </div>
     </div>
+
   </div>
   <script>
     (function () {
       $.ajax({
-        url: 'https://www.easy-mock.com/mock/5ca466975eeed03805bf4942/cat_eyes_movie/catEyesMovie',
+        url: 'https://www.easy-mock.com/mock/5ca2c29464930718b239eb94/lm/lvmeng/myMovie-demo',
         type: 'get',
         success: function (res) {
           console.log(res)
@@ -217,10 +237,12 @@
           $('.address-time .time').html(res.data.time)
           $('.movie-detail .date').html(res.data.date)
           $('.text-expander__content p').html(res.data.desc)
+         
           celebrity(res.data.person)
           booking(res.data.booking)
+           // 剧照
           photo(res.data.pictures)
-
+          // 评论
         }
       })
       function star(e) {
@@ -232,7 +254,6 @@
           $('#rating').prepend('<img class="img" src="./images/star.png">')
         }
       }
-
       $('#movie-watch').click(function () {
         if ($(this).hasClass('active')) {
           $('#movie-watch').removeClass('active')
@@ -258,18 +279,18 @@
           $('.icon-chevron__down').removeClass('up')
         }
       })
-      //演员表
+      // 演员表
       function celebrity(arr) {
         for (let n of arr) {
-          $('.movie-celebrities').append(` <li>
-            <a href="#" class="link">
-              <div class="movie-celebrities_pic">
-                <img src="${n.avatal}" alt="">
-              </div>
-              <span class="movie-celebrities_nick">${n.name}</span>
-              <span class="movie-celebrities_roles">${n.sort}</span>
-            </a>
-          </li>`)
+          $('.movie-celebrities').append(`<li>
+          <a href="#" class="link">
+            <div class="movie-celebrities__pic">
+              <img src="${n.avatal}" alt="">
+            </div>
+            <span class="movie-celebrities__nick">${n.name}</span>
+            <span class="movie-celebrities__roles">${n.sort}</span>
+          </a>
+        </li>`)
         }
       }
       //票房
@@ -279,17 +300,15 @@
         $('#bookingTotal').html(e.bookingTotal)
       }
       //剧照
-      function photo(arr) {
+      function photo(array) {
         for (let m of array) {
-          $('movie-photo_lists').append(`
-          <li class="stage-img-container">
+          $('.movie-photo__lists').append(`<li class="stage-img-container">
           <a href="#" class="link">
-            <div class="movie-celebrities_pic">
-              <img src="http://p1.meituan.net/moviemachine/6e06b1eee9a74c9573fdb8150fb8561271624.jpg@130w_180h.webp" alt="">
+            <div class="movie-celebrities__pic">
+              <img src="${m}" alt="">
             </div>
           </a>
-        </li>
-          `)
+        </li>`)
         }
       }
     })()
