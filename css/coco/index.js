@@ -48,4 +48,4 @@ function canEatAllBananas(piles, H, mid){
 }
 let piles = [3, 6, 7,11];
 console.log(canEatAllBananas(piles, 8, 4));
-console.log(minEatingSpeed([3,6,7,11],8));
+console.log(minEatingSpeed([3, 6, 7, 11], 8));

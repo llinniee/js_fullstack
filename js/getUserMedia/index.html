@@ -52,7 +52,12 @@
 
   })
   function download(src) {
-      console.log(src);
+    //   console.log(src);
+    // js模拟地址；
+    const a = document.createElement('a');
+    a.setAttribute('download', newDate());
+    a.herf = src;
+    a.click();
   }
   </script>
 </body>
