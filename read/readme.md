@@ -270,3 +270,39 @@ test match exec 方法
  复杂的事情分成n件简单类似的事情
  有退出条件
  
+
+ 4.18喻
+ landscape 横屏 portrait竖屏
+ js模块化
+ 一个类就是一个模块，有利于代码功能的分离
+ Round_item 封装
+ 其余的代码是业务代码， 要注意抽离模块， 有利于代码的维护和复用
+
+ canvas 基本api
+ context.beginPath(); //开始绘制
+ context.closePath(); //结束绘制
+ context.fill()/stroke();
+
+ 小程序是个伟大的产品
+ Android/IOS 两套代码
+ 小程序使用前端开发思路和技术，基于微信大app，App开发
+ 1.一份代码，到处运行
+ 2.前端开发， 快快快
+ 3.基于微信 性能良好
+ wxml == html
+  新的标签或组件 view = div
+  wxcss = css 
+  js
+  page = wxml+wxss+js
+  App = 多个page
+三者周转的很6
+ 写结构
+ 写样式 rpx
+ js 约定 事件函数只要加载
+ page（{
+   ，
+   bind.....: function() {
+
+   }
+ }）
+ bindtap = "bind....."
