@@ -306,3 +306,24 @@ test match exec 方法
    }
  }）
  bindtap = "bind....."
+
+ 4.19 喻
+ MVVM
+ Model Page（{data：{}}）
+ View Template wxml
+ Vm {{}} wx:for
+
+ MVC Model  数据库
+      view 静态页面
+      controler 控制器
+web HTTP 服务器
+端口？ 3000
+Mysql 3306
+WebServer 80
+
+用户通过 Request 通过IP + 端口
+web Server Responde
+http.createServer(function(request, response){
+  request 用户N
+  response
+}).listen(8080);
