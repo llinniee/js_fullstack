@@ -327,3 +327,6 @@ http.createServer(function(request, response){
   request 用户N
   response
 }).listen(8080);
+
+4.22
+js里面有很多真值，只有7个假值，分别是undefined, null, +0, -0, NaN, "", false

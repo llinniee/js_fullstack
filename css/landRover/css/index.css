@@ -115,3 +115,43 @@
   height: 100%;
   object-fit: cover;
 }
+@media only screen and (max-width: 767px) {
+  .ui.hero .item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .ui.hero .item .content {
+    height: auto;
+    color: #000;
+    align-items: center;
+    flex-direction: column;
+    order: 2;
+  }
+  .ui.hero .item img {
+    position: inherit;
+    height: auto;
+    order: 1;
+  }
+  .ui.hero .header {
+    font-size: 36px;
+    letter-spacing: 4px;
+  }
+}
+.pre.button,
+.next.button {
+  position: absolute;
+  padding: 0;
+  z-index: 3;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  text-align: center;
+}
+.pre.button {
+  left: 24px;
+}
+.next.button {
+  right: 24px;
+}
