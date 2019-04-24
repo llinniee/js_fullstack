@@ -330,3 +330,46 @@ http.createServer(function(request, response){
 
 4.22
 js里面有很多真值，只有7个假值，分别是undefined, null, +0, -0, NaN, "", false
+
+LRU Least Recently Used
+操作系统的内存中
+node fs
+硬盘
+  内存中 cpu 小 快 N
+  内存容量是多少 超过容量后淘汰的机制
+  最近最少使用
+  meet 缓存
+  LRUCache  2
+  1 put（1,1） 存入[值] {key:value}
+  2 put（2，2）
+  3 put（3,3）1 1先移除， 3放进来
+  4 put（4,4）2 2先移除  4放进来
+  5 get（3,3）
+  数组 [1,2,3,4] 
+  对象{1:1,2:2,3:3,4:4} o（1）时间开销
+  对象字面量 存取的数据结构
+  
+4.23
+函数的节流和防抖
+
+搜索建议
+ google suggest
+ input value => ajax
+ 有问题
+ 分词 灭霸 电蚊液
+ keyup 没有每次都去触发ajax 太浪费性能
+ 过滤一些无效的请求，打完一个单词再去搜索
+  wrold word js 打完一个单词后再去搜索
+
+  防抖的关键
+    频繁输入时， 怎么减少请求呢？
+    debounce(ajax, 500) 生成一个函数，控制执行，停止执行是，执行一次
+    setTimeOut delay 之后一定会执行一次
+    在规定时间内呢？ 被claer 掉
+    clearTimeOut(func.id);
+    func.id = setTimeOut(function() {
+      func();
+    },delay)
+    句柄， 不重复的数字， func 函数是对象 id属性 前一次加了一个setTimeOut
+    
+

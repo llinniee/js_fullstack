@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="row">
+        <input type="text" id="unDebounce">
+    </div>
+    <div class="row">
+        <input type="text" id="debounce">
+    </div>
+    <script>
+        // 异步，  通往服务器的
+    function ajax(content) {
+        console.log('ajax request' + content);
+    }
+    let inputa =document.getElementById('unDebounce');
+    let debounce = document.getElementById('debounce')
+    inputa.addEventListener('keyup', function(e){
+        ajax(e.target.value);
+    });
+    function debounce(func, delay) {
+        // 闭包
+        return (function(arg) {
+            // 句柄
+            clearTimeout(func.id);
+           func.id = setTimeout(function() {func(args)}, delay)
+        })
+    }
+    let debounceAjax = debounce(ajax, 500);
+    debounce.addEventListener('keyup', function(e) {
+        // 要ajax， 但抖一下
+        // ajax(e.target.value)
+        // 内部有着ajax功能
+        debounceAjax(e.target.value);
+    })
+    </script>
+</body>
+</html>

@@ -6,8 +6,8 @@
   ],
   "window": {
     "backgroundTextStyle": "dark",
-    "navigationBarBackgroundColor": "#48a6fd",
-    "navigationBarTitleText": "Linnie",
+    "navigationBarBackgroundColor": "#48A6FD",
+    "navigationBarTitleText": "旅梦开发团",
     "navigationBarTextStyle": "white"
   },
   "tabBar": {
@@ -34,5 +34,4 @@
       }
     ]
   }
-
 }
