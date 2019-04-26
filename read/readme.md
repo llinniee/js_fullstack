@@ -371,5 +371,39 @@ node fs
       func();
     },delay)
     句柄， 不重复的数字， func 函数是对象 id属性 前一次加了一个setTimeOut
+
+  4.24
+  -wxml只是模板，不像html5
+  看到的是page，不是wxml，而是编译过后的
+  js data 拿去模板生成page view
+  -登录 登录后
+  页面不是静态的， dom ajax
+  MVVM 来实现状态
+  wxml {{}} 或者指令 data 加相应的数据项就好
+  this.setData({}) 设置数据，并且带来相应部分UI的重新渲染
+  数据驱动界面的运用 响应式布局
+  跟DOM拜拜
+  MVVM 数据决定一切
+  数据状态 === 界面状态
+  登录状态 hasUserInfo 界面在某一刻有且仅有一个状态
+  userInfo:{} 数据驱动界面
+  {{}}不只是数据输出，里面是js运行
+  {{addshow？'':''}}
     
+4.25
+兼容性不行 scroll-behavior： smooth
+chrome 支持这个css，但是其他主流浏览器怎么办 scroll-behavior
+scroll-behavior  ie不支持
+兼容 hack   IE  js window.scrollTo(0, 1 / 8);
+requestAnimationFrame(回调函数)
+浏览器判断 window.navigator.userAgent()
+
+4.26
+ 全局配置 window + tabbar
+ asserts目录 pages
+
+UI框架
+app.wxss 引入weui
+数据
+生命周期 wx.request
 
