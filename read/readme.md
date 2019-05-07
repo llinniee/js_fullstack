@@ -407,3 +407,63 @@ app.wxss 引入weui
 数据
 生命周期 wx.request
 
+list 有套路
+  onLoad onReachBottom onPullDownRefesh
+  isLoading 加载 状态
+  currenPage 传参
+  totalPage 最后一页
+
+tempalate 
+  共用的界面
+  <template data={{}}>
+<template name="loading"/>
+
+4.27
+vant
+
+
+4.28
+组件思维
+ 弹窗组合了一些标签，组合在一起形成了独立的弹窗功能
+ 在其他页面里也需要用到，组合成一个独立的组件
+ 《dialog》 页面由组件拼接而成
+
+ 组件语法 同于Page 又有差别 
+ compenent({
+   data:{},
+   propetites:{
+     type: String,
+     value: '标题'
+   },
+   methods:{
+
+   },
+ })
+ —bind tap 区别
+ bindtap 向外冒泡
+ catch:tap 不会向外冒泡
+
+-云能力
+  不用买服务器， 数据库， 云计算， 云服务器的能力
+  wx.cloud().callFunction('http')
+
+-每个云函数在本地写，运行是在云里的，上传  它是一个node项目
+  got npm 包， npm install got 发出http请求
+
+
+5.6
+小程序 react  大红之后
+MVVM 组件  vant
+数据驱动页面
+Vue 语法简洁
+vue 的语法与小程序差不多 
+  1.思想 
+    网页 ，先new一个vue，使得网页变成vue的战场，开发任务组件化
+    vue.component({
+      template:``,
+      data() {
+        return {
+
+        }
+      }
+    }) 
