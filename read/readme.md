@@ -467,3 +467,14 @@ vue 的语法与小程序差不多
         }
       }
     }) 
+
+5.7
+MVVM 不需要Dom 因为DOM很低效
+但是要找元素怎么办？ ref 属性相当于id
+
+5.8 html2canvas 因为移动端 网页分享 小程序 不能分享到朋友圈，将整个网页或一部分网页转换成canvas
+html2canvas(document.body, {
+            onrendered: function(canvas) {
+                document.body.appendChild(canvas);
+            }
+        })

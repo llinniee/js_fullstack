@@ -70,9 +70,45 @@
         <Snap />
     </div>
     <script src="https://cdn.bootcss.com/vue/2.6.10/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/html2canvas/0.5.0-beta4/html2canvas.min.js"></script>
+    <script src="./heroes.js"></script>
     <script>
         // #app 里面支持MVVM
+        // 英雄
+        Vue.component("Heroes", {
+            props: {
+                heroes: {
+                    type: Array,
+                    default: function () {
+                        return [];
+                    }
+                },
+                reversing: {
+                    type: Array,
+                    default: false
+                },
+                heroHided: {
+                    type: Array,
+                    default: function () {
+                        return [];
+                    }
+                }
+            },
+            data() {
 
+            },
+            template: `<div class="content">
+                    <div class="item" v-for="(hero, index) in heroes" :key="index" :id="hero.id" >
+                        <div class="item-body>
+                            <div class="avatar">
+                                <img :src="hero.src"/>
+                            </div>
+                            <div class="info">{{hero.name}}</div>
+                        </div>
+                    </div>
+                </div>`
+        })
+        // 按钮
         Vue.component("Snap", {
             data() {
                 return {
@@ -80,26 +116,88 @@
                     snaping: false,
                     showSnap: true,
                     showReverse: flase,
-                    reversing: false
+                    reversing: false,
+                    heroes: heroes,
+                    heroHidedIds: []
                 }
             },
             methods: {
+                playAudio(target) {
+                    const audio = this.$refs.allAudio;
+                    // console.log(audio);
+                    if (target === 'snap') {
+                        audio.src = "https://yiliang114.github.io/vue-thanos-snap/media/thanos_snap_sound.b746c7d7.mp3"
+                        audio.play();
+                    } else if (target === 'reverse')
+                        audio.src = "https://yiliang114.github.io/vue-thanos-snap/media/thanos_reverse_sound.e00730e1.mp3"
+                },
                 snapHandle() {
                     this.snaping = true;
-                    setTimeout(() => {
+                    this.playAudio('snap');
+                    setTimeout(async () => {
+                        this.heroHidedIds = this.heroes.slice(0).sort(() => 0.5 - Math.random())
+                            .slice(0, Math.ceil(this.heroes.length / 2)).map(hero => hero.id);
+                        for (let i = 0; i < this.heroHidedIds.length; i++) {
+                            let heroId = this.heroHidedIds[i],
+                                item = document.getElementById(heroId);
+                            // 耗时 一个接一个的消失
+                            // async 内部，await 异步变同步
+                            await this.snapToDust(item)
+                        }
                         this.showReverse = ture;
                         this.showSnap = false;
                         this.snaping = false;
-                    },1500);
+                    }, 1500);
+
+                },
+                snapToDust(ele) {
+                    return new Promise(resolve => {
+                        html2canvas(ele, {
+                            allowTaint: true
+                        }).then(canvas => {
+                            const container = document.createElement('div');
+                            // 原来的dom visibility false 将canvas放在上面，做特效
+                            container.classList.add('dust-container');
+                            const frames = this.generateFrames(canvas);
+                            resolve();
+                        })
+                    })
+                },
+                generateFrames(canvas, count = 32) {
+                    const { width, height } = canvas;
+                    const ctx = canvas.getContext('2d');
+                    const originalData = ctx.getImageData(0, 0, width, height);
+                    const imageDatas = [...Array(count)].map((_, i) => ctx.createImageData(width, height));
+                    for (let x = 0; x < width; x++) {
+                        for (y = 0; y < height; y++) {
+                            const dataIndex = Math.floor(
+                                (count * (Math.random() + (2 * x) / width)) / 3
+                            );
+                            const pixelIndex = (y * width + x) * 4;
+                            for (let offset = 0; offset < 4; ++offset) {
+                                imageDatas[dataIndex].data[pixelIndex + offset] =
+                                    originalData.data[pixelIndex + offset];
+                            }
+
+                        }
+
+                    }
+                    return imageDatas.map(data => {
+                        const c = canvas.cloneNode(true);
+                        // putImageData used to put a ImageData on a canvas
+                        c.getContext("2d").putImageData(data, 0, 0);
+                        return c;
+                    });
 
                 },
                 reverseHandle() {
                     this.reversing = true;
+                    this.playAudio('reverse');
                     setTimeout(() => {
                         this.showReverse = false;
                         this.showSnap = true;
                         this.reversing = flase;
-                    },1500);
+                    }, 1500);
                 }
             },
             template: `
@@ -121,6 +219,8 @@
             >
             </div>
           </div>
+          <Heroes :heroes="heroes" :heroHided="heroHidedIds" :reversing="reversing"/>
+          <audio preload ref="allAudio"><audio/>
         </div>
       </div>
     `
