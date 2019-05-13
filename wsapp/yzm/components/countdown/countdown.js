@@ -1,66 +1,60 @@
 // components/countdown/countdown.js
-Page({
+Component({
+  /**
+   * 组件的属性列表
+   */
+  properties: {
+    start: {
+      type: Boolean,
+      value: false,
+      observer(newVal) {
+        console.log('--------', newVal);
+        if (newVal === true) {
+          this.countdownFunc();
+        }
+      }
+    }
+  },
 
   /**
-   * 页面的初始数据
+   * 组件的初始数据
    */
   data: {
-
+    timerText: '获取验证码'
   },
 
   /**
-   * 生命周期函数--监听页面加载
+   * 组件的方法列表
    */
-  onLoad: function (options) {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  methods: {
+    _getCountdownEvent() {
+      this.triggerEvent("getCountdownEvent");
+    },
+    _setStartDataEvent() {
+      // 报告老板
+      this.triggerEvent("setStartDataEvent", {
+        start: this.data.start
+      })
+    },
+    countdownFunc() {
+      this.setData({
+        timerText: 5
+      })
+      let countdownNum = this.data.timerText
+      let timer = setInterval(() => {
+        countdownNum--;
+        this.setData({
+          timerText: countdownNum
+        })
+        if (countdownNum === 0) {
+          this.setData({
+            timerText: '重新发送',
+            start: false
+          })
+          this._setStartDataEvent();
+          clearInterval(timer);
+        }
+      }, 1000)
+    }
   }
 })

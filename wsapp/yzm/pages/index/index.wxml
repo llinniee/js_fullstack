@@ -1,4 +1,7 @@
 <!-- 短信验证 -->
-<countdown start="{{start}}">
-
+<countdown 
+  start="{{start}}"
+  bind:setStartDataEvent="_setStartDataEvent"
+  bind:getCountdownEvent="_getCountdownEvent"
+>
 </countdown>

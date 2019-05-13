@@ -1,0 +1,6 @@
+<view class="news">
+  <navigator class="login-prompt " url="/pages/login/login" wx:if="{{ !isSignedIN}}">
+    Sign in to see My News
+  </navigator>
+  <activities  event = "{{events}}" />
+</view>

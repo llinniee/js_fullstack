@@ -486,3 +486,22 @@ foreignObject svg => html
 window.getComputedStyle(dom, null)
 任何节点的css属性值都能拿到
 
+5.9
+页面是老板，组件是员工，页面是组件组成的
+start 老板也要知道状态， Page data
+<countdown start="{{start}}"/>
+组件的数据， data(内部数据) + properties(外部数据)
+properties 里的observer接收到值改变是执行 观察者
+——从内到外触发事件
+ 内： this.triggerEvent({
+   "event_name",
+   data
+ })
+ 外： (绑定自定义事件) bind:event_name="真正执行接受消息的函数"
+
+ 页面由组件组成， 先去独立的开发组成，再拼起来
+ 由外传入的properties 由内传出的事件
+ Page 和Components就成了不可分割的有机体
+ 
+ postman测试API的工具 拿到后端接口， 先用postman测一下
+ 

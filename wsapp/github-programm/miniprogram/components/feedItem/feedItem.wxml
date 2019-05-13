@@ -1,0 +1,3 @@
+<view class="feed">
+  <image class="avart" src="{{item.actor.avart_url}}?s=50"/>
+</view>
