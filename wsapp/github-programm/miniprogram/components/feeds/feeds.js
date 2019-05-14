@@ -4,14 +4,15 @@ Component({
    * 组件的属性列表
    */
   properties: {
-    events: {
-      type: Array,
+    // feed
+    events:{
+      type:Array,
       value:[],
     },
     // loading
-    loading: {
-      type: Boolean,
-      value: false
+    loading:{
+      type:Boolean,
+      value:false,
     }
   },
 

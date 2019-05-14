@@ -1,20 +1,48 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/userConsole/userConsole",
-    "pages/storageConsole/storageConsole",
-    "pages/databaseGuide/databaseGuide",
-    "pages/addFunction/addFunction",
-    "pages/deployFunctions/deployFunctions",
-    "pages/chooseLib/chooseLib",
-    "pages/openapi/openapi"
+    "pages/find/find",
+    "pages/message/message",
+    "pages/myuser/myuser"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#F6F6F6",
-    "navigationBarTitleText": "云开发 QuickStart",
+    "navigationBarTitleText": "美丽说",
     "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#6e6e6e",
+    "selectedColor": "black",
+    "borderStyle": "black",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/icon/shouye.png",
+        "selectedIconPath": "images/icon/shouye2.png"
+      },
+      {
+        "pagePath": "pages/find/find",
+        "text": "发现",
+        "iconPath": "images/icon/faxian.png",
+        "selectedIconPath": "images/icon/faxian2.png"
+      },
+      {
+        "pagePath": "pages/message/message",
+        "text": "消息",
+        "iconPath": "images/icon/xiaoxi.png",
+        "selectedIconPath": "images/icon/xiaoxi2.png"
+      },
+      {
+        "pagePath": "pages/myuser/myuser",
+        "text": "我的",
+        "iconPath": "images/icon/wode.png",
+        "selectedIconPath": "images/icon/wode2.png"
+      }
+    ]
   },
   "sitemapLocation": "sitemap.json"
 }

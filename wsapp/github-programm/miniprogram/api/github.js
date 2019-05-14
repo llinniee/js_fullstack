@@ -2,8 +2,8 @@
 const trendings = (data) => {
   return new Promise((resolve, reject) => {
     wx.request({
-      data,
       url: 'https://github-trending-api.now.sh/repositories',
+      data,
       success: (res) => {
         resolve(res.data);
       },
@@ -12,25 +12,22 @@ const trendings = (data) => {
       }
     })
   })
-  const events = () => {
-    return{
-      get() {
-        const promise = new Promise((resolve, reject) => { 
-          wx.request({
-            url: 'https://api.github.com/events',
-            success: res => {
-              resolve({
-                data: res.data,
-                next: null
-              });
-            },
-            fail: err => {
-              reject(err);
-            }
-          })
+}
+
+const events=()=>{
+  return {
+    get(){
+      return new Promise((resolve,reject)=>{
+        wx.request({
+          url:"https://api.github.com/events",
+          success:res=>{
+            resolve({data:res.data,next:null});
+          },
+          fail:error=>{
+            reject(error)
+          }
         })
-        return promise 
-      }
+      })
     }
   }
 }

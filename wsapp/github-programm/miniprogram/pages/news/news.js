@@ -6,7 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    events: [],
+    events:[],
   },
 
   /**
@@ -16,23 +16,23 @@ Page({
     wx.startPullDownRefresh();
   },
 
-  reloadData() {
-    const successHandle = ({data, next}) => {
+  reloadData(){
+    const successHandle=({data,next})=>{
       wx.stopPullDownRefresh();
       this.setData({
-        events: data
+        events:data
       })
     };
-    const errorHandle = () => {
-      wx.startPullDownRefresh();
+    const errorHandle=()=>{
+      wx.stopPullDownRefresh();
     };
     github.events().get()
-      .then(
-        successHandle
+    .then(
+      successHandle
       )
-      .catch(
-        errorHandle
-      )
+    .catch(
+      errorHandle
+    )
   },
 
   /**

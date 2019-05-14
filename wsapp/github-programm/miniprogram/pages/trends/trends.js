@@ -1,28 +1,29 @@
 // miniprogram/pages/trends/trends.js
 const github = require('../../api/github.js');
 
-const timeRange = [
+const TimeRange=[
   { label: 'Daily', value: 'Daily' },
   { label: 'Weekly', value: 'Weekly' },
   { label: 'Monthly', value: 'Monthly' }
-]
-const languages =
-  [
-    'All',
-    'C', 'CSS', 'C#', 'C++',
-    'Dart', 'Dockerfile',
-    'Erlang',
-    'Gradle', 'Go',
-    'HTML', 'Haskell',
-    'Java', 'JavaScript', 'JSON', 'Julia',
-    'Kotlin',
-    'MATLAB',
-    'Python', 'PHP',
-    'R', 'Ruby', 'Rust',
-    'Shell', 'SQL', 'Swift',
-    'TeX',
-    'Vue'
-  ].map(it => ({ label: it, value: it }));
+];
+
+const languages=[
+  'All',
+  'C', 'CSS', 'C#', 'C++',
+  'Dart', 'Dockerfile',
+  'Erlang',
+  'Gradle', 'Go',
+  'HTML', 'Haskell',
+  'Java', 'JavaScript', 'JSON', 'Julia',
+  'Kotlin',
+  'MATLAB',
+  'Python', 'PHP',
+  'R', 'Ruby', 'Rust',
+  'Shell', 'SQL', 'Swift',
+  'TeX',
+  'Vue'
+].map(it=>({label:it,value:it}));
+
 
 Page({
 
@@ -30,17 +31,16 @@ Page({
    * 页面的初始数据
    */
   data: {
-    since: timeRange[0],
-    lang: languages[0],
+    since:TimeRange[0],
+    lang:languages[0],
     trends: [],
-    selectorValues: [timeRange, languages],
-    selectedIndices: [0, 0]
+    selectorValues:[TimeRange,languages],
+    selectedIndices:[0,0],
   },
   reloadData() {
-    const { selectedIndices } = this.data;
-    const since = timeRange[selectedIndices[0]].value.toLowerCase();
+    const {selectedIndices}=this.data;
+    const since = TimeRange[selectedIndices[0]].value.toLowerCase();
     const language = languages[selectedIndices[1]].value.toLowerCase();
-    // 返回一个promise
     github.trendings({since,language})
     .then(data => {
       console.log(data);
@@ -53,8 +53,9 @@ Page({
       wx.stopPullDownRefresh();
     })
   },
-  changeFilter(event) {
-    const selectedIndices = event.detail.value;
+
+  changeFilter(event){
+    const selectedIndices=event.detail.value;
     this.setData({
       selectedIndices
     });

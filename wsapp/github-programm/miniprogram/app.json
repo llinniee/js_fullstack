@@ -4,7 +4,8 @@
     "pages/news/news",
     "pages/issues/issues",
     "pages/pulls/pulls",
-    "pages/me/me"
+    "pages/me/me",
+    "components/feeds/feeds"
   ],
   "window": {
     "backgroundColor": "#24292e",

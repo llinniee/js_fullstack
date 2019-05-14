@@ -1,3 +1,4 @@
-<view class="feed">
-  <image class="avart" src="{{item.actor.avart_url}}?s=50"/>
+<!--components/feedItem/feedItem.wxml-->
+<view class='feed'>
+  <image src='{{item.actor.avatar_url}}?s=50' class='avatar'></image>
 </view>
