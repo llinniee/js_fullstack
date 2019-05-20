@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -31,22 +32,22 @@
             { name: 'Chris Coyier', twitter: '@chriscoyier', bio: 'CSS Tricks and CodePen' },
             { name: 'Addy Osmani', twitter: '@addyosmani', bio: 'Googler' },
         ];
-        function getPostById(id) {
-            return new Promise((resolve, reject) => {
+        function getPostById(id){
+            return new Promise((resolve,reject) =>{
                 //find the post
-                setTimeout(() => {
+                setTimeout(()=>{
                     const post = posts.find(post => post.id === id)
                     if (post) {
                         resolve(post)
-                    } else {
+                    } else{
                         reject(Error('Post is not found!'))
                     }
-                }, 200)
+                },200)
             })
         }
-        function hydrateAuthor(post) {
-            return new Promise((resolve, reject) => {
-                setTimeout(() => {
+        function hydrateAuthor (post) {
+            return new Promise ((resolve,reject) => {
+                setTimeout (()=>{
                     const authorDetails = authors.find(person => person.name === post.author)
                     if (authorDetails) {
                         post.author = authorDetails
@@ -54,19 +55,19 @@
                     } else {
                         reject(Error('Author is not found!'))
                     }
-                }, 200)
+                },200)
             })
         }
         getPostById(1)
-            .then(post => {
-                return hydrateAuthor(post)
-            })
-            .then(author => {
-                console.log(author)
-            })
-            .catch(err => {
-                console.log(err)
-            })
+        .then(post =>{
+            return hydrateAuthor(post)
+        })
+        .then(author =>{
+            console.log(author)
+        })
+        .catch(err => {
+            console.log(err)
+        })
     </script>
 </body>
 

@@ -7,9 +7,12 @@
     <title>Document</title>
 </head>
 <body>
-   <script>
-    const postsPromise = fetch('https://wesbos.com/wp-json/wp/v2/posts')
-    console.log(postsPromise)
-   </script>
+    <script>
+        const postsPromise = fetch('https://wesbos.com/wp-json/wp/v2/posts')
+        // console.log(postsPromise)
+        postsPromise
+            .then((data) => {data.json()})
+            .then(data => console.log(data))
+    </script>
 </body>
 </html>

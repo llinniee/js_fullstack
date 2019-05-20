@@ -10,3 +10,8 @@ npm run scripts
  html template
  打包成一个可以发布的产品， webpack
  
+ -一个项目有多分环境
+ start dev development 开发环境 代码环境 本地
+ test 测试环境 局域网内
+ build --mode production compressed 生产环境  线上环境  域名对应的服务器
+
