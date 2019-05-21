@@ -1,0 +1,75 @@
+body{
+    width:100%;
+}
+.nav {
+    height: 50px;
+    width:100%;
+    font-size: 18px;
+    background-color: red;
+    text-align: center;
+    padding: 6px;
+    box-sizing: border-box;
+    /* margin: auto; */
+    /* vertical-align: center; */
+}
+.nav span {
+    color: #fff;
+    display: inline-block;
+    
+  }
+.movie {
+    height: 200px;
+    padding: 8px;
+    background-color: #40454d;
+}
+.container {
+    height: 150px;
+}
+.container-left {
+    width: 100px;
+    height: 150px;
+    float: left;
+    overflow: hidden;
+}
+.container-right {
+    float: left;
+    margin-left: 10px;
+    
+}
+.container-right .movie-name {
+    font-size: 20px;
+    color:#fff;
+}
+.container-right .movie-ename {
+    font-size: 15px;
+    color:#fff;
+}
+.container-right .movie-want {
+    font-size: 20px;
+    color: yellow;
+}
+.detaile {
+    height: 30px;
+    padding: 8px 0;
+    display: flex;
+}
+.detaile-same {
+    border: 1px solid rgba(255,255,255,0.4);
+    background-color: rgba(255,255,255,0.4);
+    border-radius: 2px;
+    width: 150px;
+    flex: 1;
+    margin-right: 8px;
+    text-align: center;
+    vertical-align: middle;
+}
+.detaile .detaile-left img {
+    width: 14px;
+    height: 14px;
+  
+}
+.detaile .detaile-right img {
+    width: 14px;
+    height: 14px;
+}
+

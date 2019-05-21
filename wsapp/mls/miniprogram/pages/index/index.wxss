@@ -1,3 +1,8 @@
+.home {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
 .nav {
   height:99rpx;
   display: flex
@@ -23,17 +28,30 @@
 }
 .pers {
   height: 135rpx;
-  vertical-align: center;
+  font-size: 30rpx;
+  text-align: center;
+  /* vertical-align: center */
 }
 .pers-avart {
-  display: inline-block;
   width: 83rpx;
   height: 83rpx; 
+  float:left;
+  margin-left: 20rpx;
   border-radius: 50%;
   background: #cdcdcd;
 }
 .pers-nickname {
-  font-size: 30rpx;
+  float: left;
+  margin-left: 20rpx;
+  text-align: center;
+}
+.pers-attention {
+  float: right;
+  width: 150rpx;
+  height: 75rpx;
+  border: 1px solid rgba(255,255,255,0.4);
+  background-color: rgba(255,255,255,0.4);
+  padding: 5rpx;
   text-align: center;
 }
 

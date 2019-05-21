@@ -14,8 +14,12 @@
             <view class="pers-avart">
               <!-- <image src="../../images/IMG_0831.JPG"/> -->
             </view>
-            <view class="pers-nickname">Valerie419</view>
-            <view class="{{pers-attention}}">关注</view>
+            <view class="pers-nickname">
+              <text>Valerie419</text>
+            </view>
+            <view class="{{pers-attention}}">
+              <text>关注</text>
+            </view>
         </view>
         <view class="pic">
           <swiper autoplay="false" circular="true">
