@@ -1,4 +1,5 @@
 <view class="home" >
+    <!-- 顶部关注推荐搜索 -->
     <view class="nav">
       <view class="nav-left"></view>
       <van-tabs class="nav-center">
@@ -10,17 +11,19 @@
       </view>  
     </view>
     <view class="main">
+        <!-- 博主 -->
         <view class="pers">
             <view class="pers-avart">
               <!-- <image src="../../images/IMG_0831.JPG"/> -->
             </view>
             <view class="pers-nickname">
-              <text>Valerie419</text>
+              <text class="pers-info">Valerie419</text>
             </view>
             <view class="{{pers-attention}}">
-              <text>关注</text>
+              <text class="pers-info">关注</text>
             </view>
         </view>
+        <!-- 滑动图片 -->
         <view class="pic">
           <swiper autoplay="false" circular="true">
             <block wx:for="{{imgUrls}}" wx:key="{{index}}">
@@ -35,6 +38,17 @@
               <view class="pic-stat_col"></view>
               <view class="pic-stat_bar"></view>
             </view>
+        </view>
+        <!-- 图片喜欢评论 -->
+        <view calss="pic-det">
+          <view class="pic-left">
+            <icon  name="like-o" size="30" />
+            <icon  name="comment-o" size="30" />
+          </view>
+          <view class="pic-right">
+            <icon  name="star-o" size="30" />
+            <icon  name="ellipsis" size="30" />
+          </view>
         </view>
         <view class="det">
             <view class="det-tie">深圳谈店</view>

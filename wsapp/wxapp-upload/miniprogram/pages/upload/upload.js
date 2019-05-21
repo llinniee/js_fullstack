@@ -1,25 +1,11 @@
-// pages/cart/cart.js
+// miniprogram/pages/upload/upload.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    hasList:false,
-    carts:[],
-    selectAllStatus:true
-  },
-  selectAll(e){
-    let selectAllStatus = this.data.selectAllStatus
-    selectAllStatus = !selectAllStatus
-    let carts = this.data.carts
-    for (let i = 0;i < carts.length;i ++){
-      carts[i].selected = selectAllStatus
-    }
-    this.setData({
-      selectAllStatus:selectAllStatus,
-      carts:carts
-    })
+
   },
 
   /**
@@ -40,15 +26,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    setTimeout(() => {
-      this.setData({
-        hasList:true,
-        carts:[
-          { id: 1, title: '新鲜芹菜 半斤', image: '/image/s5.png', num: 4, price: 0.01, selected: true },
-          { id: 2, title: '素米 500g', image: '/image/s6.png', num: 1, price: 0.03, selected: true }
-        ]
-      })
-    },1000)
+
   },
 
   /**

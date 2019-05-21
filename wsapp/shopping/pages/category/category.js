@@ -19,10 +19,11 @@ Page({
     detail:[]
   },
   switchTab(e){
-   this.Data({
-    toView: e.target.dataset.id,
-    curIndex: e.target.dataset.index
-   })
+    console.log(e)
+    this.setData({
+      toView:e.target.dataset.id,
+      curIndex:e.target.dataset.index
+    })
   },
 
   /**

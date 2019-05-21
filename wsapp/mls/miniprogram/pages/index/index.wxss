@@ -37,6 +37,7 @@
   height: 83rpx; 
   float:left;
   margin-left: 20rpx;
+  margin-top: 10px;
   border-radius: 50%;
   background: #cdcdcd;
 }
@@ -49,9 +50,33 @@
   float: right;
   width: 150rpx;
   height: 75rpx;
-  border: 1px solid rgba(255,255,255,0.4);
+  border: 1px solid #cdcdcd;
   background-color: rgba(255,255,255,0.4);
   padding: 5rpx;
+}
+.pers-info {
+  font-size: 30rpx;
+  line-height: 135rpx; 
   text-align: center;
+}
+.pic-det {
+  height: 82rpx;
+  display: flex;
+}
+.pic-det .pic-left {
+  flex:1;
+  background-color: red;
+}
+.pic-det .pic-right {
+  flex:1;
+  background-color: green;
+}
+.pic-det .pic-left .pic-img {
+  width:44rpx;
+  height: 44rpx;
+}
+.pic-det .pic-right .pic-img {
+  width:44rpx;
+  height: 44rpx;
 }
 
