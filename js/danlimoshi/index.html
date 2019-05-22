@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>单例模式</title>
+</head>
+<body>
+    <script>
+        function Modal(html) {
+            this.html = html;
+            this.show = show;
+        }
+        Modal.prototype.open = function() {
+            this.show = true
+        }
+        Modal.prototype.close = function() {
+            this.show = false;
+        }
+        // 首页有弹窗
+        const Modal = new Modal();
+        // 详情页也有弹窗
+        const Modal = new Modal();
+    </script>
+</body>
+</html>

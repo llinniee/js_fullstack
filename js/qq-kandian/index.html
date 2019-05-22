@@ -1057,8 +1057,23 @@
             target: scroller,    // 哪个元素滚动
             property: 'translateY', // 运动的属性
             max: 0,
-            
-
+            min: window.innerHeight - 202 - 50 - 20 * 160,
+            change: function(v) {
+                //滚动的时候translateY的值
+                if(v < 0) {
+                    //头缩小 0 ~ 1
+                    if (v < -140) v = -140
+                    const scaleY = (240 + v) / 240;
+                    header.scaleY = scaleY;
+                    userLogo.scaleX = userLogo.scaleY = scaleY;
+                    userLogo.translateY = v / 1.7;
+                } else {
+                    const scaleY = 1 + v / 240;
+                    header.scaleY = scaleY;
+                    userLogo.scaleX = userLogo.scaleY = scaleY;
+                    userLogo.translateY = v / 1.7;
+                }
+            }
         })
 
     </script>
