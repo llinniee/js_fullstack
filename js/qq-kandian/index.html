@@ -467,7 +467,7 @@
     </style>
 </head>
 
-<body>
+<body class="homepage">
     <header class="header" id="header">
     </header>
     <div class="user-logo-wrapper" id="user-logo-wrapper">
@@ -1041,12 +1041,26 @@
     <script src="https://unpkg.com/alloytouch@0.2.5/alloy_touch.css.js"></script>
     <script>
         const infoList = document.getElementById('infoList'),
-        scroller = document.getElementById('scroller'),
-        header = document.getElementById('header'),
-        userLogo = document.getElementById('uesr-logo-wrapper');
+            scroller = document.getElementById('scroller'),
+            header = document.getElementById('header'),
+            userLogo = document.getElementById('user-logo-wrapper');
         Transform(scroller);
         Transform(header);
+        header.originY = -70;
+        // header.style.transform = 'translateY(xpx)';
+        header.translateY = -70;
         Transform(userLogo);
+
+        new AlloyTouch({
+            touch: '#wrapper',   // 可以在哪个元素上触摸
+            vertical: true,
+            target: scroller,    // 哪个元素滚动
+            property: 'translateY', // 运动的属性
+            max: 0,
+            
+
+        })
+
     </script>
 </body>
 
