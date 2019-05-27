@@ -12,10 +12,19 @@
         <input type="text" id="message">
         <button>sed</button>
     </form>
+    <div class="message-board"></div>
     <script src="https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
     <script src = "/socket.io/socket.io.js"></script>
     <script>
         let socket = io()
+        $('from').submit(function() {
+            socket.emit('message', $('#message').val())
+            $('#message').val('')
+            return false
+        })
+        socket.on('message', function(msg) {
+            $('#message-board').append($('.div').text(mag))
+        })
     </script>
 </body>
 </html>

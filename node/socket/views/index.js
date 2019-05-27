@@ -19,6 +19,13 @@ let server = app.listen(3000, () => {
 })
 
 let io = socketIO(server)
+
 io.on('connection', (socket) => {
-  console.log('connection')
+  console.log('connected')
+  socket.on('disconnect', () =>{
+    console.log('disconnected')
+  })
+  socket.on('message',(msg) => {
+    io.emit('message', msg)
+  })
 })
