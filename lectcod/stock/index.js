@@ -18,7 +18,11 @@ var maxProfit = function (price) {
         high = cur;
       }else if (cur < low) {
         low = cur;
+        high = cur;   //先买再卖
       }
+       if(high - low > max) {
+         max = high - low;
+       }
     }
   return max;
 }
