@@ -13,7 +13,7 @@ http.createServer((req, res) => {
     staticServer(req, res);
     return false;
   }
-  fs.readFile('./static/index.html', 'binary', (err, file) => {
+  fs.readFile('./index1.html', 'binary', (err, file) => {
     res.write(file, 'binary')
     res.end();
   })
@@ -24,4 +24,16 @@ function staticServer(req, res) {
   let url = req.url
   const fileName = path.basename(url);
   const filePath = path.join(__dirname, staticDir, fileName)
+  fs.exists(filePath, exists => {
+    if (!exists) {
+      res.end('404');
+    }
+    fs.readFile(filePath, 'binary', (err, file) => {
+      if(err) {
+        res.end(err);
+      }
+      res.write(file, 'binary')
+      res.end();
+    })
+  })
 }
