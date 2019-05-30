@@ -1,5 +1,9 @@
-const superagent = require('superagent');
+const superagent = require('superagent'); //发送请求的
 const cheerio = require('cheerio');
+const ejs = require('ejs');
+const fs = require('fs');
+const path = require('path');
+const nodemailer = require('nodemailer');
 
 const local = 'jiangxi/qingshanhu-district';
 const weatherUrl = `https://tianqi.moji.com/weather/china/${local}`;
@@ -15,9 +19,9 @@ const getWeatherTips = function() {
       let threeDaysDate =[];
       $('.forecast .days').each((index, dayNode) => {
         const $singleDay = $(dayNode).find('li');
-        const day = $singleDay.eq(0).text();
-        const weatherText = $singleDay.eq(1).text();
-        const temperature = $singleDay.eq(2).text();
+        const day = $singleDay.eq(0).text().trim();
+        const weatherText = $singleDay.eq(1).text().trim();
+        const temperature = $singleDay.eq(2).text().trim();
         threeDaysDate.push({
           day, weatherText, temperature
         })
@@ -49,6 +53,30 @@ const getOneData = function () {
 
     })
   })
+}
+function getSpiderData() {
+  const htmlData = {}
+  Promise.all([getWeatherTips(), getOneData()]).then(spiderArr => {
+    const [weatherData, oneData] = spiderArr;
+    htmlData['weatherTip'] = weatherData.weatherTip;
+    console.log(weatherData, oneData)
+    sendEmail(htmlData);
+  })
+}
+function sendEmail(htmlData) {
+  const template = ejs.compile(
+    fs.readFileSync(path.resolve(__dirname, 'email.ejs'), 'utf8')
+  )
+  const html = template(htmlData);
+}
+
+const html = template(htmlData);
+let transporter = nodemailer.createTransport({
+  service: 'qq',
+  port: 465,  //smtp 端口号
+  secure: true,
 })
+getSpiderData()
+
 
 
