@@ -8,3 +8,7 @@ MVVM 封装了DOM 让其更高效
   template  是render
   css 
   js isLikeed
+- React 和vue 都是MVVM的一种实现
+  React用来做后台界面 Vue 用户界面
+  挂载点 界面和组件的关系， 界面《组件《 -html DOM被封装进去了 组件类
+  constructor this.state 数据部分

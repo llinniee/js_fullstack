@@ -30,6 +30,9 @@
       // 之前的dom  template 必备的方法
       changeLikeText () {
         console.log(this.el);
+        const likeText = this.el.querySelector('.like-text');
+        this.state.isLiked = !this.state.isLiked;
+        likeText.innerHTML = this.state.isLiked?'取消':'点赞'
       }
       render() {
         this.el = createDOMFromString(`
