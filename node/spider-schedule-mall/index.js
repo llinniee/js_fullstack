@@ -74,8 +74,26 @@ const html = template(htmlData);
 let transporter = nodemailer.createTransport({
   service: 'qq',
   port: 465,  //smtp 端口号
-  secure: true,
+  secureConnection: true,
+  auth: {
+    user: '144070825@qq.com',
+    pass: ''
+  }
 })
+transporter.sendMail({
+  from: '茹茹<144070825@qq.com>',
+  to: '',
+  subject: '邮件',
+  html: html,
+},
+(err, info) => {
+  if(err) {
+    console.log('err', err);
+    return false;
+  }
+  console.log('info', info)
+}
+)
 getSpiderData()
 
 
