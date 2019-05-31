@@ -15,7 +15,20 @@ export default new Router({
     {
       path: '/look',
       name: 'Look',
-      component: Look
+      component: Look,
+      children: [
+        {
+          path: 'look-one',
+          name: 'LookOne',
+          component: LookOne
+        },
+        {
+          path: 'look-two',
+          name: 'LookTwo',
+          component: LookTwo
+        }
+      ]
     }
+    
   ]
 })

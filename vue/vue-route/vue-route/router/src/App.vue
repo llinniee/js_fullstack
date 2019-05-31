@@ -1,14 +1,12 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png">
-    <router-view/>
-    <p>导航：
-      <rouute-look to="/">首页</rouute-look>|
-      <rouute-look :to="{name: 'Look', params: {id: 123}}">看看</rouute-look>
-      <!-- <rouute-look to=/look/666>看看</rouute-look> -->
-      <rouute-look to="/look/look-one">look1</rouute-look>
-      <rouute-look to="/look/look-two">look2</rouute-look>
+    <p>
+      导航：
+      <router-link to="/">首页</router-link> |
+      <router-link to="/look">看看</router-link>
     </p>
+    <router-view/>
   </div>
 </template>
 
