@@ -2,6 +2,8 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
 import Look from '@/components/Look'
+import LookOne from '@/components/LookOne'
+import LookTwo from '@/components/LookTwo'
 
 Vue.use(Router)
 
@@ -28,7 +30,12 @@ export default new Router({
           component: LookTwo
         }
       ]
+    },
+    {
+      path: '/go-back',
+      redirect: '/'
     }
+
     
   ]
 })

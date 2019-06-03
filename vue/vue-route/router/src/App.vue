@@ -8,6 +8,7 @@
       <!-- <rouute-look to=/look/666>看看</rouute-look> -->
       <rouute-look to="/look/look-one">look1</rouute-look>
       <rouute-look to="/look/look-two">look2</rouute-look>
+      <rouute-look to="/go-back">重定向</rouute-look>
     </p>
   </div>
 </template>
