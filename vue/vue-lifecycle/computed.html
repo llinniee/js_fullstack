@@ -13,7 +13,7 @@
     <div class="money">{{totalPrice}}</div> -->
     <div class="news">
       <ul>
-        <li v-for="list in newsList">{{list.title}}--{{list.date}}</li>
+        <li v-for="list in reserveNews">{{list.title}}--{{list.date}}</li>
       </ul>
     </div>
   </div>
@@ -35,6 +35,9 @@
     computed: {
       totalPrice () {
         return `￥ ${this.price * this.num}`
+      },
+      reserveNews () {
+        return this.newsList.reverse()
       }
     },
   })
