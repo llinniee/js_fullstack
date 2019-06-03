@@ -9,6 +9,7 @@
 </head>
 <body>
   <div id="app">
+    <div class="msg">${messege}</div>
     <div class="btn">
       <button @click='add'>add</button>
     </div>
@@ -28,7 +29,7 @@
       el: '#app',
       data () {
         return {
-          
+          messege: 'hello'
         }
       },
       created () {
@@ -39,7 +40,8 @@
           console.log('原生的方法')
         }
       },
-      extends: ext
+      extends: ext,
+      delimiters: ['${', '}']
     })
   </script>
 </body>
