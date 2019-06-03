@@ -8,13 +8,40 @@
   <title>Watch</title>
 </head>
 <body>
-  <div id="app"></div>
+  <div id="app">
+    <div class="wendu">{{wendu}}</div>
+    <p class="suggestion">{{suggestion}}</p>
+    <div class="btn">
+      <button @click='add'>add</button>
+      <button @click='reduce'>reduce</button>
+    </div>
+  </div>
   <script>
     var app = new Vue({
       el: '#app',
       data () {
         return {
-          
+          wendu: 27,
+          suggestion: '短袖'
+        }
+      },
+      methods: {
+        add () {
+          this.wendu +=5
+        },
+        reduce () {
+          this.wendu -=5
+        },
+      },
+      watch: {
+        wendu (newVal, oldVal) {
+          if (newVal >= 26) {
+            this.suggestion = '短袖'
+          }else if(newVal <= 26 && oldVal > 0) {
+            this.suggestion = '夹克长裙'
+          }else {
+            this.suggestion = '棉袄羽绒服'
+          }
         }
       }
     })
