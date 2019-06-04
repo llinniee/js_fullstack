@@ -10,6 +10,16 @@ next 下一个中间件
 以X开头的：自定义响应头 
 ##koa 第三方中间件
 koa ctx 就是req res 组成的对象
+ctx : {
+  req: {}
+  res: {}
+}
+用了koa-views之后
+ctx : {
+  req: {}
+  res: {}
+  render: () => {}
+}
 接着扩展ctx，接着往ctx上面塞东西
 
 #
@@ -22,4 +32,8 @@ koa 压缩 -> 20 500m
 不把node_modules放在压缩目录里面 5m ->
 npm i 从json文件里面读取依赖安装
 -s 
+
+#ejs
+  <%= %> 原样输出
+  <%- %>解析html
 
