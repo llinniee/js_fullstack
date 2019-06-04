@@ -8,4 +8,18 @@ next 下一个中间件
 3. 解耦：每一个中间价负责一间事
 
 以X开头的：自定义响应头 
+##koa 第三方中间件
+koa ctx 就是req res 组成的对象
+接着扩展ctx，接着往ctx上面塞东西
+
+#
+package.json 项目描述
+依赖 npm install 下来的文件
+-s 往dependencies 里面放东西
+
+npm i  生成一个node_modules的目录
+koa 压缩 -> 20 500m
+不把node_modules放在压缩目录里面 5m ->
+npm i 从json文件里面读取依赖安装
+-s 
 
