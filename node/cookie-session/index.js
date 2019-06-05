@@ -1,5 +1,7 @@
 const Koa = require('koa')
 const Router = require('koa-router')
+const koaSession = require('koa-session')
+const koaStatic = require('koa-static')
 
 const app = new Koa();
 const router = new Router();
