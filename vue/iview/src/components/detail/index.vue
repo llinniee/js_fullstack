@@ -1,16 +1,17 @@
 <template>
   <div class="index">
     <Table border :columns="columns7" :data="data6"></Table>
-    <Alert>666</Alert>
-    <Page :total="100"/>
+    <Alert :msg='message' v-if="isAlert" @fromChild="getMsgFromChild"></Alert>
   </div>
 </template>
+
 <script>
 import Alert from '@/components/common/Alert'
 export default {
-  name: "Index",
   data() {
     return {
+      message: null,
+      isAlert: false,
       columns7: [
         {
           title: "Name",
@@ -54,6 +55,8 @@ export default {
                   on: {
                     click: () => {
                       // this.show(params.index);
+                      this.isAlert = true
+                      this.message = params.index
                     }
                   }
                 },
@@ -116,7 +119,12 @@ export default {
     },
     remove(index) {
       this.data6.splice(index, 1);
+    },
+    getMsgFromChild (data) {
+      // console.log(data)
+      this.isAlert = data
     }
   }
 };
 </script>
+

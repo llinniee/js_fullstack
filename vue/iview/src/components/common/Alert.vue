@@ -1,13 +1,23 @@
 <template>
-  <div class="alert">666</div>
+  <div class="alert">
+    {{msg}}
+    </br>
+    <Button type="success" @click="hidden">ok</Button>
+  </div>
 </template>
 
 <script>
 export default {
   name: "Alert",
+  props: ['msg'],
   data () {
     return {
 
+    }
+  },
+  method: {
+    hidden () {
+      this.$emit('fromChild', false)
     }
   }
 }
