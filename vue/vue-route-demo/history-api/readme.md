@@ -8,3 +8,10 @@
 -jquery on 事件api
 $(docunment).on(event_type, child_nodes, fn)
 -没有前端路由(组件)，但是可以通过后端路由(restful, mvc router) / xxx.html
+
+-前端路由两种做法， hastag #
+ history.pushState api url path 部分改变
+ 但是没有刷新页面
+ state 这次跳转url对应的状态数据
+ title,  url
+ 
