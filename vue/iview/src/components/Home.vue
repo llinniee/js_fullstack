@@ -53,6 +53,17 @@
               </Dropdown>
             </div>
           </div>
+          <el-breadcrumb separator-class="el-icon-arrow-right">
+            <el-breadcrumb-item :to="{ path: '/table' }">首页</el-breadcrumb-item>
+            <el-breadcrumb-item :to="{ path: '/table/manage' }">component</el-breadcrumb-item>
+          </el-breadcrumb>
+          <div class="layout-content">
+            <div class="layouyt-content-main">
+              <router-view>
+
+              </router-view>
+            </div>
+          </div>
         </Col>
       </Row>
     </div>
@@ -60,6 +71,7 @@
 </template>
 
 <script>
+
 export default {
   name: "Home",
   data() {
