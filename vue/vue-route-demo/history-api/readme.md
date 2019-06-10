@@ -1,0 +1,9 @@
+-理论支持
+ spa 单页应用开发 nav 导航不动
+ footer 也不动 中间body是切换的， 页面不需要刷新的
+ 传统web 开发中，空白（新的web请求）页(get)
+ 白一下 加载一下 这个体验很糟糕
+ 对应路由， 把响应组件切换出来，像app一样
+
+-jquery on 事件api
+$(docunment).on(event_type, child_nodes, fn)
