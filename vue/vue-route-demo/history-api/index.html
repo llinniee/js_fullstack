@@ -5,38 +5,36 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>index</title>
   <link rel="stylesheet" href="./conmmon.css">
 </head>
 
 <body>
   <div class="wrapper">
-    <div class="nav">
-      <ul>
-        <li><a href="index.html">index</a></li>
-        <li><a href="fluffy.html">fluffy</a></li>
-        <li><a href="socks.html">socks</a></li>
-        <li><a href="whisters.html">whisters</a></li>
-      </ul>
-      <p>
-        Welcome to Kittens! Home of Fluffy, Socks, and Whiskers. If you're not suffering from a cute overdose within the
-        hour, then you really are a heartless bugger! Now lets look at some cats!
-      </p>
-      <div class="media">
-        <img src="http://www.ichong123.com/uploads/2014/08/m1.jpg" alt="" class="photo">
-      </div>
+    <ul class="nav">
+      <li><a href="index.html">index</a></li>
+      <li><a href="fluffy.html">fluffy</a></li>
+      <li><a href="socks.html">socks</a></li>
+      <li><a href="whisters.html">whisters</a></li>
+    </ul>
+    <p class="content">
+      Welcome to Kittens! Home of Fluffy, Socks, and Whiskers. If you're not suffering from a cute overdose within the
+      hour, then you really are a heartless bugger! Now lets look at some cats!
+    </p>
+    <div class="media">
+      <img src="http://www.ichong123.com/uploads/2014/08/m1.jpg" alt="" class="photo">
     </div>
   </div>
   <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
   <script>
-  $(function() {
-    $(document).on('click', 'a', (event) => {
-      // 干掉传统链接
-      event.preventDefault();
-      const url = event.target.herf;
-      consloe.log(url);
+    $(function () {
+      $(document).on('click', 'a', (event) => {
+        // 干掉传统链接
+        event.preventDefault();
+        const url = event.target.herf;
+        consloe.log(url);
+      })
     })
-  })
   </script>
 </body>
 
