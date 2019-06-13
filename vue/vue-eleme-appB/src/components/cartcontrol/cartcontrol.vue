@@ -1,7 +1,8 @@
 <template>
   <div class="cartcontrol">
     <transition name="move">
-      <div class="cart-decrease" v-show="food.count > 0">
+      <div class="cart-decrease" v-show="food.count > 0" 
+        @click.stop.prevent="decreaseCart">
         <span class="inner icon-remove_circle_outline"></span>
       </div>
     </transition>
@@ -36,6 +37,15 @@ export default {
         this.food.count++
       }
       this.$emit('add',event.target)
+    },
+    decreaseCart () {
+      if (!event._constructed) { 
+        //如果不逊在这个属性，则为原生点击事件，不执行下面的函数
+        return 
+      }
+      if (this.food.count) {
+        !this.food.count--
+      }
     }
   }
 }
