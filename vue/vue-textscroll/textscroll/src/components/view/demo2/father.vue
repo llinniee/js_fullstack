@@ -1,24 +1,26 @@
 <template>
   <div class="container">
-    <child :send-msg="test"></child>
+    {{msg}}
+    <child @xly='getXly'></child>
   </div>
 </template>
 
 <script>
 import child from './child.vue'
 export default {
-  name: 'demo1',
+  name: 'demo2',
   data () {
     return {
-      test: {
-      message: 'hhhhh',
-      date: '2019-6-11',
-      age: '18'
-      }
+      
     }
   },
   components: {
     child
+  },
+  methods: {
+    getXly (data) {
+      this.msg = data
+    }
   }
 }
 </script>
