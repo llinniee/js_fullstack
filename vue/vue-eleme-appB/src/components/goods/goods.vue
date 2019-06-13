@@ -32,7 +32,9 @@
                     <span class="now">￥{{food.price}}</span>
                     <span class="old" v-show="food.oldPrice">￥{{food.oldPrice}}</span>
                   </div>
-                  <div class="cartcontrol-wrapper"></div>
+                  <div class="cartcontrol-wrapper">
+                    <cartcontrol  :food="food" @add="addFood"></cartcontrol>
+                  </div>
                 </div>
               </li>
             </ul>
@@ -45,6 +47,7 @@
 
 <script>
 import BScroll from 'better-scroll'
+import cartcontrol from '@/components/cartcontrol/cartcontrol'
 export default {
   name:'Goods',
   data () {
@@ -53,11 +56,20 @@ export default {
       goods:[]
     }
   },
+  components: {
+    cartcontrol
+  },
   methods: {
     _initScroll () {
       this.menuScroll = new BScroll(this.$refs.menuWrapper,{
         click:true
       })
+    },
+    addFood (target) {
+      this._drop(target)
+    },
+    _drop (target) {
+      // 体验优化，异步执行下落动画
     }
   },
   created () {
@@ -186,4 +198,8 @@ export default {
               text-text-decoration line-through
               font-size 10px
               color rgb(147,153,159)
+          .cartcontrol-wrapper
+            position absolute
+            right 0
+            bottom 12px
 </style>

@@ -1,21 +1,41 @@
 <template>
   <div class="cartcontrol">
     <transition name="move">
-      <div class="cart-decrease">
-        <span class="inner incon-remove_circle_outline"></span>
+      <div class="cart-decrease" v-show="food.count > 0">
+        <span class="inner icon-remove_circle_outline"></span>
       </div>
     </transition>
-    <div class="cart-count">123</div>
-    <div class="cart-add icon-add_circle"></div>
+    <div class="cart-count" v-show="food.count > 0">{{food.count}}</div>
+    <div class="cart-add icon-add_circle" @click.stop.prevent="addCart"></div>
   </div>
 </template>
 
 <script>
 export default {
   name: 'cartcontrol',
+  props: {
+    food: {
+      type: Object
+    }
+  },
   data () {
     return {
 
+    }
+  },
+  methods: {
+    addCart (event) {
+      // console.log(event)
+      if (!event._constructed) { 
+        //如果不逊在这个属性，则为原生点击事件，不执行下面的函数
+        return 
+      }
+      if (!this.food.count) {
+        this.$set(this.food, 'count', 1)
+      }else {
+        this.food.count++
+      }
+      this.$emit('add',event.target)
     }
   }
 }
