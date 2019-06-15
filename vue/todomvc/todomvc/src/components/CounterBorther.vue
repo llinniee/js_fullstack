@@ -6,7 +6,12 @@
 
 <script>
 export default {
-  props: ['count']
+  props: ['count'],
+  methods: {
+    increment () {
+      this.$emit('increment')
+    }
+  }
 }
 </script>
 

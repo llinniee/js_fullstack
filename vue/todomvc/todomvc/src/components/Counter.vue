@@ -1,6 +1,6 @@
 <template>
   <div>
-    Clicked: {{count}} times, count is
+    Clicked: {{$store.state.count}} times, count is
     <button @click="increment"></button>
   </div>
 </template>
@@ -17,7 +17,7 @@ export default {
   
   methods: {
     increment () {
-      this.count++;
+     
     }
   }
 }
