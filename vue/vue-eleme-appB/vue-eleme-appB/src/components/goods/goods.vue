@@ -51,7 +51,9 @@
         </ul>
       </div>
       <div>
-        <shopcart ref="shopcart" :selectFoods="selectFoods"></shopcart>
+        <shopcart ref="shopcart" :selectFoods="selectFoods" 
+        :deliveryPrice="seller.deliveryPrice"
+        :minPrice="seller.minPrice"></shopcart>
       </div>
     </div>
   </div>
@@ -85,6 +87,17 @@ export default {
         }
       }
       return 0
+    },
+    selectFoods () {
+      let foods = [];
+      this.goods.forEach(good => {
+        good.foods.forEach(food => {
+          if (food.count) {
+            foods.push(food)
+          }
+        })
+      })
+      return foods
     }
   },
   components: {
