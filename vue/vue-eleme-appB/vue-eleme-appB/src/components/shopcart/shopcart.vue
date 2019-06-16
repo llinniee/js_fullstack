@@ -56,6 +56,7 @@
 </template>
 
 <script>
+import BScroll from 'better-scroll'
 export default {
   props: {
     selectFoods: {
@@ -80,7 +81,6 @@ export default {
   },
   data () {
     return {
-      totalPrice: 0,
       balls: [
         {
           show: false
@@ -103,6 +103,13 @@ export default {
     }
   },
   computed: {
+    totalPrice () {
+      let total = 0
+      this.selectFoods.forEach((food) => {
+        total += food.price * food.count
+      })
+      return total
+    },
     payClass () {
       if (this.totalPrice < this.minPrice) {
         return 'not-enough'
@@ -126,12 +133,71 @@ export default {
       } else {
         return `去结算`
       }
+    },
+    listShow () {
+      if (!this.totalCount) {
+        this.fold = true
+        return false
+      }
+      let show = !this.fold
+      if (show) {
+        this.$nextTick(() => {
+          if (!this.scroll) {
+            this.scroll = new BScroll(this.$refs.listContent, {
+              click: true
+            }) 
+          }else {
+            this.scroll.refresh()
+          }
+        })
+      }
+      return show
     }
   },
   methods: {
-    toggleList () {}
-    
+    toggleList () {
+
+    },
+    beforeDrop (el) {
+      let count = this.balls.length
+      while (count--) {
+        let ball = this.balls[count]
+        if (ball.show) {
+          let rect = ball.el.getBoundingClientRect()
+          let x = rect.left - 32
+          let y = -(window.innerHeight - rect.top - 22) 
+          el.style.display = ''
+          el.style.webkitTransfrom = `translate3d(0, ${y}px, 0)`
+          el.style.transfrom = `translate3d(0, ${y}px, 0)`
+          let inner = el.getElementsByClassName('inner-hook')[0]
+          inner.style.webkitTransfrom = `translate3d(${x}px, 0, 0)`
+          inner.style.transfrom = `translate3d(${x}px, 0, 0)`
+        }
+      }
+    },
+    dropping (el, done) {
+      let rf = el.offsetHeight
+      this.$nextTick(() => {
+        el.style.webkitTransfrom = `translate3d(0, 0, 0)`
+        el.style.transfrom = `translate3d(0, 0, 0)`
+        let inner = el.getElementsByClassName('inner-hook')[0]
+        inner.style.webkitTransfrom = `translate3d(0, 0, 0)`
+        inner.style.transfrom = `translate3d(0, 0, 0)`
+        le.addEventListener('transitionend', done)
+      })
+    },
+    afterDrop (el) {
+      let ball = this.dropBalls.shift()
+      if (ball) {
+        ball.show = false
+        el.style.display = 'none'
+      }
+    },
+    empty () {},
+    hideList () {}
+
   }
+  
 }
 </script>
 
