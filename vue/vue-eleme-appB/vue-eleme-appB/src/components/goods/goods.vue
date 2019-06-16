@@ -62,7 +62,7 @@
 <script>
 import BScroll from 'better-scroll'
 import cartcontrol from '@/components/cartcontrol/cartcontrol'
-import shopcart from '@/components/shopcart'
+import shopcart from '@/components/shopcart/shopcart'
 export default {
   name: 'Goods',
   props: {
