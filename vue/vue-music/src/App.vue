@@ -2,17 +2,33 @@
   <div id="app">
     <!-- 放头部header -->
     <v-header>
-      <div slot="left-icon">123456</div>
+      <i slot="left-icon" class="icon">&#xe692;</i>
+      <span slot="content">Magic Music</span>
+      <router-link to="/user" slot="right-icon">
+        <i class="icon">&#xe63c;</i>
+      </router-link>
     </v-header>
+    <!-- tab -->
+    <v-tab></v-tab>
+    <keep-alive>
+      <router-view></router-view>
+    </keep-alive>
+    <!-- play -->
+    <!-- sidebar -->
+    <v-siderbar></v-siderbar>
   </div>
 </template>
 
 <script>
 import header from '@/components/header'
+import tab from '@/components/tab'
+import siderbar from '@/components/siderbar'
 export default {
   name: 'App',
   components: {
-    'v-header':header
+    'v-header':header,
+    'v-tab':tab,
+    'v-siderbar':siderbar
   }
 }
 </script>
@@ -38,6 +54,6 @@ html,body
   -webkit-tap-highlight-color transparent
   background rgba(8, 5, 58, 0.9)
   color #fff
-  
+
 
 </style>
