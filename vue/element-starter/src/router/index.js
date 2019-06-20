@@ -1,5 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import {
+  login 
+} from 'pages/'
 
 // this.$router this.$route
 Vue.use(VueRouter)
@@ -11,4 +14,10 @@ const routes = [
     hidden: true,
     component: login
   }
-]
+];
+
+export default new VueRouter({
+  routes
+  // strict: process.env.NOOE_ENV !== 'production'
+
+})
