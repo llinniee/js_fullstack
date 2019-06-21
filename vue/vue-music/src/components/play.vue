@@ -17,6 +17,25 @@
         <!-- 播放页面内容 -->
       </div>
     </transition>
+    <!-- 底部的播放器 -->
+    <transition name="mini">
+      <div class="mini-play" v-show="!fullScreen" @click="open">
+        <div class="picture">
+          <div class="imgWrapper" ref="miniWrapper">
+            <img alt="" ref="miniImage" :class="cdCls" 
+            v-lazy="(currentSong.al && currentSong.al.picUrl) || (currentSong.artists && currentSong.artists[0].img1v1Url)"
+            width="40" height="40">
+          </div>
+        </div>
+        <div class="text">
+          <h2 class="name" v-html="currentSong.name"></h2>
+          <p class="desc" v-html="(currentSong.ar && currentSong.ar[0].name) || (currentSong.artists && currentSong.artists[0].name)"></p>
+        </div>
+        <div class="control">
+          <i class="icon icon-mini">&#xe60a;</i>
+        </div>
+      </div>
+    </transition>
   </div>
 </template>
 

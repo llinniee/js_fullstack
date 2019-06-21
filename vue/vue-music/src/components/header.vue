@@ -19,7 +19,9 @@ export default {
     return {}
   },
   methods: {
-    leftEvent () {}
+    leftEvent () {
+      this.$store.dispatch('setShowSlidebar', true)
+    }
   }
 }
 </script>

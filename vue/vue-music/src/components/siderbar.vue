@@ -11,38 +11,38 @@
       </div>
       <div class="menu">
         <ul>
-          <li>
-            <router-link to="" :click="_hidebar">
+          <li @click="_hidebar">
+            <router-link to="/user" @click="_hidebar">
               <i class="icon">&#xe63c;</i>
               <span>个人中心</span>
             </router-link>
           </li>
           <li>
-            <router-link to="" :click="_hidebar">
+            <router-link to="" @click="_hidebar">
               <i class="icon">&#xe631;</i>
               <span>音效调整</span>
             </router-link>
           </li>
           <li>
-            <router-link to="" :click="_hidebar">
+            <router-link to="" @click="_hidebar">
               <i class="icon">&#xe65b;</i>
               <span>定时关闭</span>
             </router-link>
           </li>
           <li>
-            <router-link to="" :click="_hidebar">
+            <router-link to="" @click="_hidebar">
               <i class="icon">&#xe601;</i>
               <span>听歌拾曲</span>
             </router-link>
           </li>
           <li>
-            <router-link to="" :click="_hidebar">
+            <router-link to="" @click="_hidebar">
               <i class="icon">&#xe600;</i>
               <span>帮助</span>
             </router-link>
           </li>
           <li>
-            <router-link to="" :click="_hidebar">
+            <router-link to="" @click="_hidebar">
               <i class="icon">&#xe61f;</i>
               <span>设置</span>
             </router-link>
@@ -50,6 +50,7 @@
         </ul>
       </div>
     </div>
+    <div v-show="showSiderbar" class="siderbar_mask" @click="_hidebar"></div>
   </div>
 </template>
 
@@ -61,9 +62,14 @@ export default {
 
     }
   },
+  computed: {
+    ...mapGetters([
+      'showSlidebar'
+    ])
+  },
   methods: {
     _hidebar () {
-
+      this.$store.dispatch('setShowSlidebar',false)
     }
   }
 }

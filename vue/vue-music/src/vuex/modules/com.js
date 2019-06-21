@@ -2,7 +2,7 @@ import api from '../../api'
 import * as types from '../types'
 
 const state = {
-  showSlidebar: false
+  showSlidebar: false 
 }
 
 const mutations = {
