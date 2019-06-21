@@ -8,7 +8,6 @@
         <div class="name">
           茹茹
         </div>
-
       </div>
       <div class="menu">
         <ul>
@@ -55,10 +54,11 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
   data () {
     return {
-      showSidervar: true
+
     }
   },
   methods: {
