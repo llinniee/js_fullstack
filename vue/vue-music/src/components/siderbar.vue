@@ -50,7 +50,7 @@
         </ul>
       </div>
     </div>
-    <div v-show="showSiderbar" class="siderbar_mask" @click="_hidebar"></div>
+    <div v-show="showSlidebar" class="siderbar_mask" @click="_hidebar"></div>
   </div>
 </template>
 

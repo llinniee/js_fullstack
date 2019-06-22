@@ -14,8 +14,10 @@
       <router-view></router-view>
     </keep-alive>
     <!-- play -->
+    <v-play></v-play>
     <!-- sidebar -->
     <v-siderbar></v-siderbar>
+    
   </div>
 </template>
 
@@ -23,12 +25,14 @@
 import header from '@/components/header'
 import tab from '@/components/tab'
 import siderbar from '@/components/siderbar'
+import play from '@/components/play'
 export default {
   name: 'App',
   components: {
     'v-header':header,
     'v-tab':tab,
-    'v-siderbar':siderbar
+    'v-siderbar':siderbar,
+    'v-play':play,
   }
 }
 </script>
