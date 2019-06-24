@@ -5,6 +5,8 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    todos: []
-  }
+    todos: JSON.parse(window.locatStorage.getItem('STORAGE_KEY') || '[]')
+  },
+  actions,
+  
 })
