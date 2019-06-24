@@ -1,5 +1,5 @@
 <template>
-  <div class="searchBox">
+  <div class="search-box">
     <i class="icon icon-search">&#xe638;</i>
     <input type="text" ref="query" v-model="query" :placeholder="placeholder">
     <i class="icon icon-dismiss" v-show="query" @click="clear">&#xe638;</i>
@@ -62,3 +62,4 @@ export default {
     margin-right px2rem(10px)
     color #6b6a6a
 </style>
+
