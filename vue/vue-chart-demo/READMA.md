@@ -10,3 +10,4 @@ this.$store.user.
   token 令牌环  this.$store.user.token
   跳转到登录页？
 - 登录鉴权
+ 1.延迟加载路由
