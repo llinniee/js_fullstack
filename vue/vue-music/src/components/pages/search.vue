@@ -35,7 +35,7 @@
     </div>
     <!-- 搜素结果 -->
     <div class="search-result" v-show="query" ref="search-result">
-      <v-suggest></v-suggest>
+      <v-suggest :query="query"></v-suggest>
     </div>
   </div>
 </template>

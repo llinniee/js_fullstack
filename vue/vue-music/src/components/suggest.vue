@@ -59,7 +59,24 @@ export default {
           console.log(res)
         }
       })
-    } 
+    } ,
+    search () {
+      this.page=1
+      this.hasMore=true,
+      this.$refs.suggest.scrollTo(0,0)
+      this.result = []
+      this.fetchResult(this.page)
+    },
+    searchMore () {},
+    listScroll () {}
+  },
+  watch: {
+    query (newQuery) {
+      if (!newQuery) {
+        return
+      }
+      this.search(newQuery)
+    }
   }
 }
 </script>
