@@ -1,8 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import {networkInterfaces} from 'os'
 
 Vue.use(Router)
-
+import  { getToke } from '@/utils/auth';
 const router = new Router({
   routes: [
     {
@@ -18,7 +19,7 @@ const router = new Router({
     }
   ]
 })
-let token = false;
+let token = getToke();
 const whiteList = ['/login','/signup', 'auth-redirect']
 router.beforeEach((to, from, next) => {
   if (token) {

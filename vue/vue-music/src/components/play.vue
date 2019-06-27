@@ -1,5 +1,6 @@
 <template>
-  <div class="play" v-show="playList.length > 0">
+  <div class="play" v-show="playList.length>0">
+    <!-- 播放页面 -->
     <transition 
       name="normal"
       @enter="enter"
@@ -23,16 +24,22 @@
         <div class="middle" 
         @touchstart.prevent="middleTouchStart"
         @touchmove.prevent="middleTouchMove"
-        @touchend="middleTouchEnd">
+        @touchend="middleTouchEnd"
+        >
           <div class="middle-l" ref="middleL">
             <div class="cd-wrapper" ref="cdWrapper">
               <div class="cd" ref="imageWrapper">
-                <img :src="(currentSong.al && currentSong.al.picUrl) || (currentSong.artists && currentSong.artists[0].img1v1Url)" 
-                alt="" ref="image" :class="cdCls" class="image">
+                <img 
+                  :src="(currentSong.al && currentSong.al.picUrl) || (currentSong.artists && currentSong.artists[0].img1v1Url)" 
+                  alt=""
+                  ref="image"
+                  :class="cdCls"
+                  class="image"
+                >
               </div>
             </div>
             <div class="playing-lyric-wrapper">
-              <div class="playing-lyric"> {{playingLyric}}</div>             
+              <div class="playing-lyric">{{playingLyric}}</div>
             </div>
           </div>
         </div>
@@ -43,7 +50,13 @@
       <div class="mini-player" v-show="!fullScreen" @click="open">
         <div class="picture">
           <div class="imgWrapper" ref="miniWrapper">
-            <img ref="miniImage" :class="cdCls" width="40" height="40" v-lazy="(currentSong.al && currentSong.al.picUrl) || (currentSong.artists && currentSong.artists[0].img1v1Url)">
+            <img 
+              ref="miniImage"
+              :class="cdCls"
+              width="40"
+              height="40"
+              v-lazy="(currentSong.al && currentSong.al.picUrl) || (currentSong.artists && currentSong.artists[0].img1v1Url)"
+            >
           </div>
         </div>
         <div class="text">
@@ -51,7 +64,7 @@
           <p class="desc" v-html="(currentSong.ar && currentSong.ar[0].name) || (currentSong.artists && currentSong.artists[0].name)"></p>
         </div>
         <div class="control">
-          <i clas="icon icon-mini" v-if="playing">&#xe60a;</i>
+          <i class="icon icon-mini" v-if="playing">&#xe60a;</i>
           <i class="icon icon-mini" v-else>&#xe606;</i>
         </div>
         <div class="control">
@@ -61,26 +74,24 @@
           <i class="icon">&#xe927;</i>
         </div>
         <div class="bottom-progress-bar">
-          <!-- toFixed保留几位小数 动态进度条 -->
-          <div class="bottom-progress" :style="{width:(currentTime / duration).toFixed(3)*100 + '%'}"></div>
+          <div class="bottom-progress" :style="{width: (currentTime / duration).toFixed(3)*100 + '%'}"></div>
         </div>
       </div>
     </transition>
-
   </div>
 </template>
 
 <script>
-import {mapGetters} from 'vuex'
+import { mapGetters } from 'vuex'
 export default {
   data () {
     return {
-      playList:[1],
-      currentSong:{},
-      playing:false,
-      currentTime:3,
-      duration:1,
-      playingLyric: 'hhhhh'
+      playList: [1],
+      currentSong: [],
+      playing: false,
+      currentTime: 3,
+      duration: 1,
+      playingLyric: '我叹服你的技巧'
     }
   },
   computed: {
@@ -92,21 +103,20 @@ export default {
     ])
   },
   methods: {
-    open(){
-      this.$store.dispatch('selectPlaySong',true)
+    open () {
+      this.$store.dispatch('selectPlaySong', true)
     },
-    enter(){},
-    afterEnter(){},
-    leave(){},
-    afterLeave(){},
-    back(){
-      this.$store.dispatch('selectPlaySong',false)
+    enter () {},
+    afterEnter () {},
+    leave () {},
+    afterLeave () {},
+    back () {
+      this.$store.dispatch('selectPlaySong', false)
     },
-    middleTouchStart(){},
-    middleTouchMove(){},
-    middleTouchEnd(){}
-
-  },
+    middleTouchStart () {},
+    middleTouchMove () {},
+    middleTouchEnd () {}
+  }
 }
 </script>
 
@@ -177,16 +187,16 @@ export default {
         .cd-wrapper
           position absolute
           left 10%
-          top 0px
+          top 0
           width 80%
           box-sizing border-box
           height 100%
-          .cd 
+          .cd
             width 100%
             height 100%
             border-radius 50%
             .image
-              position absolute 
+              position absolute
               left 0
               top 0
               width 100%
@@ -198,7 +208,7 @@ export default {
               animation rotate 20s linear infinite
         .playing-lyric-wrapper
           width 80%
-          margin 30px auto 0 auto 
+          margin 30px auto 0 auto
           overflow hidden
           text-align center
           .playing-lyric
@@ -206,9 +216,6 @@ export default {
             line-height px2rem(40px)
             font-size 14px
             color hsla(0, 0%, 100%, 0.5)
-          
-
-
   .mini-player
     display flex
     align-items center
@@ -277,7 +284,7 @@ export default {
       .bottom-progress
         height 100%
         background linear-gradient(#902541, #902444)
-    
+
 
 
 @keyframes rotate

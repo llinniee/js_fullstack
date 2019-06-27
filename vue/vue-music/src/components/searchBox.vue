@@ -1,8 +1,9 @@
+
 <template>
   <div class="search-box">
     <i class="icon icon-search">&#xe638;</i>
-    <input type="text" ref="query" v-model="query" :placeholder="placeholder">
-    <i class="icon icon-dismiss" v-show="query" @click="clear">&#xe638;</i>
+    <input type="text" ref="query" v-model="query" class="box" :placeholder="placeholder">
+    <i class="icon icon-dismiss" v-show="query" @click="clear"></i>
   </div>
 </template>
 
@@ -12,7 +13,7 @@ export default {
   props: {
     placeholder: {
       type: String,
-      default: '搜素歌曲、歌手'
+      default: '搜索歌曲、歌手'
     }
   },
   data () {
@@ -38,8 +39,7 @@ export default {
   }
 }
 </script>
-
-<style lang="stylus" scoped>
+<style lang='stylus' scoped>
 @import '../assets/css/function'
 .search-box 
   display flex
@@ -68,4 +68,3 @@ export default {
     margin-right px2rem(10px)
     color #6b6a6a
 </style>
-

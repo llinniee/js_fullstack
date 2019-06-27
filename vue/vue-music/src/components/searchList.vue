@@ -1,12 +1,16 @@
+
 <template>
   <div class="search-list" v-show="searches.length">
     <transition-group name="list" tag="ul">
-      <li class="search-item"
-      v-for="item in searches" :key="item" @click="searchItem(item)">
-      <span class="text">{{item}}</span>
-      <span class="icon-box" @click.stop="deletOne(item)">
-        <i class="icon">&#xe656;</i>
-      </span>
+      <li class="search-item" 
+      v-for="item in searches" 
+      :key="item" 
+      @click="selectItem(item)"
+      >
+        <span class="text">{{item}}</span>
+        <span class="icon-box" @click.stop="deleteOne(item)">
+          <i class="icon">&#xe656;</i>
+        </span>
       </li>
     </transition-group>
   </div>
@@ -17,15 +21,16 @@ export default {
   props: {
     searches: {
       type: Array,
-      default: ['许嵩']
+      default: []
     }
   },
   methods: {
-    searchItem () {}
+    selectItem () {
+
+    }
   }
 }
 </script>
-
 <style lang="stylus" scoped>
 .search-list 
   .search-item 

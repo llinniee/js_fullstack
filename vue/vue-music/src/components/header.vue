@@ -20,7 +20,7 @@ export default {
   },
   methods: {
     leftEvent () {
-      this.$store.dispatch('setShowSlidebar', true)
+      this.$store.dispatch('setShowSidebar', true)
     }
   }
 }

@@ -1,13 +1,11 @@
 <template>
-  <div class="sidebar" :class="{showSlidebar: showSlidebar}">
-    <div class="sidebar-con" :class="{showbar:showSlidebar}">
+  <div class="sidebar" :class="{showSidebar: showSidebar}">
+    <div class="sidebar-con" :class="{showbar: showSidebar}">
       <div class="head">
         <div class="avatar">
-          <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1561045746176&di=fdbf2c752e3a141b8b5348cb78d52323&imgtype=0&src=http%3A%2F%2F5b0988e595225.cdn.sohucs.com%2Fimages%2F20180501%2Fcad812e410614be699508cdf32366c67.jpeg" alt="">
+          <img src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1919326320,3728667730&fm=26&gp=0.jpg" alt="">
         </div>
-        <div class="name">
-          茹茹
-        </div>
+        <div class="name">蜗牛</div>
       </div>
       <div class="menu">
         <ul>
@@ -32,7 +30,7 @@
           <li>
             <router-link to="" @click="_hidebar">
               <i class="icon">&#xe601;</i>
-              <span>听歌拾曲</span>
+              <span>听歌识曲</span>
             </router-link>
           </li>
           <li>
@@ -50,7 +48,7 @@
         </ul>
       </div>
     </div>
-    <div v-show="showSlidebar" class="siderbar_mask" @click="_hidebar"></div>
+    <div v-show="showSidebar" class="sidebar_mask" @click="_hidebar"></div>
   </div>
 </template>
 
@@ -59,17 +57,17 @@ import { mapGetters } from 'vuex'
 export default {
   data () {
     return {
-
     }
   },
   computed: {
     ...mapGetters([
-      'showSlidebar'
+      'showSidebar'
     ])
   },
   methods: {
     _hidebar () {
-      this.$store.dispatch('setShowSlidebar',false)
+      console.log(123)
+      this.$store.dispatch('setShowSidebar', false)
     }
   }
 }
@@ -147,4 +145,3 @@ export default {
     z-index 1001
     background rgba(0, 0, 0, 0.4)
 </style>
-

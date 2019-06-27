@@ -10,22 +10,22 @@
       <span class="tab-link">排行</span>
     </router-link>
     <router-link tag="div" class="tab-item" to="/search">
-      <span class="tab-link">搜素</span>
+      <span class="tab-link">搜索</span>
     </router-link>
   </div>
 </template>
 
 <script>
 export default {
-
+  name: 'tab'
 }
 </script>
 
 <style lang="stylus" scoped>
 @import "../assets/css/function"
 .tab
-  height px2rem(88px)
   display flex
+  height px2rem(88px)
   line-height px2rem(88px)
   font-size 14px
   &-item
@@ -33,7 +33,7 @@ export default {
     text-align center
     .tab-link
       padding-bottom 5px
-      color hsla(0, 0%,100%, 0.5)
+      color hsla(0, 0%, 100%, 0.5)
     &.active
       .tab-link
         color #ea2448
