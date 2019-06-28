@@ -42,6 +42,58 @@
               <div class="playing-lyric">{{playingLyric}}</div>
             </div>
           </div>
+          <v-scroll class="middle-r" ref="lyricList" :data="currentLyric && currentLyric.lines">
+            <div class="lyric-wrapper">
+              <div v-if="currentLyric">
+                <p
+                  ref="lyricLine"
+                  class="text"
+                  :class="{'current': currentLineNum ===index}"
+                  v-for="(line,index) in currentLyric.lines"
+                  :key="index"
+                >{{line.txt}}</p>
+              </div>
+              <div class="pure-music" v-show="isPureMusic">
+                <p>{{pureMusicLyric}}</p>
+              </div>
+            </div>
+          </v-scroll>
+        </div>
+        <!-- 播放页面的底部 -->
+        <div class="bottom">
+          <div class="dot-wrapper">
+            <span class="dot" :class="{'active':currentShow==='cd'}"></span>
+            <span class="dot" :class="{'active':currentShow==='lyric'}"></span>
+          </div>
+          <div class="progress-wrapper">
+            <span class="time time-l">{{format(currentTime)}}</span>
+            <div class="progress-bar-wrapper">
+            </div>
+            <span class="time time-r">{{format(duration)}}</span>
+          </div>
+          <div class="operators-box">
+            <div class="operators">
+              <div class="icon-box i-left" @click="changeMode">
+                <i class="icon" style="font-size: 20px">&#xe819;</i>
+              </div>
+              <div class="icon-box i-left" :class="disableCls">
+                <i @click="prev" class="icon">&#xe61e;</i>
+              </div>
+              <div class="icon-box i-center" :class="disableCls">
+                <div>
+                  <i class="icon" v-if="playing" @click="togglePlaying">&#xe644;</i>
+                  <i class="icon icon-pause" v-else @click="togglePlaying">&#xe630;</i>
+                </div>
+              </div>
+              <div class="icon-box i-right" :class="disableCls">
+                <i @click="next" class="icon">&#xe604;</i>
+              </div>
+              <div class="icon-box i-right" @click="showPlaylist">
+                <i class="icon" style="font-size: 28px">&#xe927;</i>
+                <!-- <i @click="toggleFavorite(currentSong)" class="icon" :class="favoriteIcon"></i> -->
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </transition>
