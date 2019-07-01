@@ -155,7 +155,8 @@ export default {
       playingLyric: '我叹服你的技巧',
       pureMusicLyric: '',
       isPureMusic: false,
-      currentLineNum: 0
+      currentLineNum: 0,
+      currentShow: 'cd'
     }
   },
   computed: {
@@ -175,6 +176,25 @@ export default {
     "v-scroll":scroll
   },
   methods: {
+    format (interval) {
+      interval = interval | 0
+      const minute = interval / 60 |0
+      const second = this._pad(interval % 60)
+      return `${minute}:${second}`
+    },
+    _pad (num, n = 2) {
+      let len = num.toString().length
+      while (len < n) {
+        num = '0' + num
+        len++
+      }
+      return num
+    },
+    changeMode () {},
+    prev () {},
+    togglePlaying () {},
+    next () {},
+    showPlayList () {},
     open () {
       this.setFullScreen(true)
     },
@@ -283,7 +303,29 @@ export default {
       },5000)
       this.getLyric(newSong.id)
     },
-    playing 
+    playing (newPlaying) {
+      if (!this.songReady) {
+        return
+      }
+      const audio = this.$refs.audio
+      this.$nexTick(() => {
+        newPlaying ? audio.play() : audio.paused()
+      })
+      if (!newPlaying) {
+        if (this.fullScreen) {
+          this.syncWrapperTransform('imageWrapper', 'image')
+        } else {
+          this.syncWrapperTransform('minWrapper', 'minImage')
+        }
+      }
+    },
+    fullScreen (newVal) {
+      if (newVal) {
+        setTimeout(() => {
+          this.$refs.lyricList.refresh()
+        },20)
+      }
+    }
   }
 }
 </script>
