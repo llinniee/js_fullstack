@@ -8,16 +8,30 @@
 </head>
 <body>
   <script>
-    var a = {
-      user: '蜗牛',
-      fn: function (n) {
-        console.log(this.user)
-        console.log( n + 1)
+    // var a = {
+    //   user: '蜗牛',
+    //   fn: function (n) {
+    //     console.log(this.user)
+    //     console.log( n + 1)
+    //   }
+    // }
+    // var b = a.fn
+    // b.call(a, 5)
+    // b()
+
+    // call方法的实现原理
+    Function.prototype.call =  function () {
+      let [thisArg, ...args] = [...arguments]
+      if (!thisArg) {
+        thisArg = typeof window === 'undefind' ? global : window
       }
+      // this的指向是当前函数 当前函数是一个func.call
+      thisArg.func = this
+      // 执行函数
+      let result = thisArg.func(...args)
+      delete thisArg.func   //thisArg 上并没有func属性，因此需要移除
+      return result
     }
-    var b = a.fn
-    b.call(a, 5)
-    b()
   </script>
 </body>
 </html>
