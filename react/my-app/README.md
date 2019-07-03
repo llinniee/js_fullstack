@@ -1,29 +1,8 @@
-# my-app
-
-## Project setup
-```
-yarn install
-```
-
-### Compiles and hot-reloads for development
-```
-yarn run serve
-```
-
-### Compiles and minifies for production
-```
-yarn run build
-```
-
-### Run your tests
-```
-yarn run test
-```
-
-### Lints and fixes files
-```
-yarn run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+- 后缀变成.ts
+  .typescript 是js的超集
+  typescript 会编译成js
+  可以跟鞋java一样
+  .ts -> webpack loader -> babel
+  ->js
+  大型项目,可以优先减少bug 60%
+  
