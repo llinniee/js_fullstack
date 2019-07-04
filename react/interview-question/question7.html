@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let a = 'hello',
+      b = 123,
+      c = true,
+      d = undefined,
+      e = null,
+      // ------
+      f = {},
+      g = [],
+      h = function () { };
+      console.log(typeof(a))
+      console.log(g instanceof Array)
+
+      // 显式原型和隐式原型
+      function Student(name) {
+        this.name = name
+      }
+      Student.prototype.Setage = function () {
+        this.age = 18
+      }
+      let wn = new Student('wn')
+      console.log(wn._proto_)
+      console.log(Student.prototype)
+
+      // instanceof 原理
+      function instance_of(L, R) {
+        let O = R.prototype, L = L._proto_
+        while (true) {
+          if (L = null) { //已经找到顶了
+            return false
+          }
+          if (O === L) {
+            return true
+          }
+          L = L._proto_
+          
+        }
+      }
+  </script>
+</body>
+</html>
