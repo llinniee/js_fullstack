@@ -2,7 +2,7 @@
 export interface movie {
   name: string;
   title: string;
-  id: string
+  id: string;
 }
 export interface State {
   movieList:  movie[]
