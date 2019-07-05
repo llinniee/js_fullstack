@@ -4,7 +4,11 @@ class Demo1 extends Component {
     console.log(this.props)
     return (
       // <div></div>
-      <div>Demo1</div>
+      <div style={{backgroundColor: 'red'}}
+      onClick={() => {
+        const { onClick } = this.props;
+        onClick('内容来自子组件')
+      }}>Demo1</div>
     )
   }
 }

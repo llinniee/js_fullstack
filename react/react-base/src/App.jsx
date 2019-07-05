@@ -31,7 +31,9 @@ function App() {
   
   return (
     <div>
-      <Demo1 names={names} from="App" />
+      <Demo1 names={names} from="App" onClick={(a) => {
+        console.log(a)
+      }} />
       <Demo2 names={names} from="App" />
       <p style={{color: 'red'}} onClick={ () => {
         console.log('red')
