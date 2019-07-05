@@ -1,14 +1,15 @@
 <template>
   <div class="menu">
     {{message}}
-    {{name.name}}
+    <!-- {{name.name}} -->
+    {{app.user}}
   </div>
 </template>
 
 <script>
 import bus from '@/bus/bus'
 export default {
-  inject: ['name'],
+  inject: ['app'],
   data () {
     return {
       message: 'aaaa'

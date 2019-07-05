@@ -11,7 +11,12 @@ export default {
     return {
       app: this
     }
- }
+  },
+  data () {
+    return {
+      user: '张三'
+    }
+  }
 }
 </script>
 
