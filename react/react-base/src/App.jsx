@@ -1,6 +1,12 @@
 import React from 'react';
 import logo from './logo.svg';
+import Demo1 from './Demo1'
+import Demo2 from './Demo2'
 import './App.css';
+
+function renderStr() {
+  return 'string'
+}
 
 function App() {
   const age = 18;
@@ -22,9 +28,11 @@ function App() {
   const nameNodes = names.map((name, index) => {
     return (<div style={styObj}>{name}</div>)
   })
-
+  
   return (
     <div>
+      <Demo1 names={names} from="App" />
+      <Demo2 names={names} from="App" />
       <p style={{color: 'red'}} onClick={ () => {
         console.log('red')
       }}> { age } </p>
@@ -36,6 +44,9 @@ function App() {
           return (<div>{name}</div>)
         })
       }
+      {nameNodes}
+      {renderStr()}
+      {true ? <div>登录</div> : <a href="#">链接</a>}
     </div>
   );
 }

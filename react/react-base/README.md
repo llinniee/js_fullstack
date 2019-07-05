@@ -13,4 +13,10 @@ jsx -> js + html
 vue template
 
 哪个地方放什么东西
+ 
+
+# 组件
+  function App() {return}  function component
+  class class component
+  function component
 
