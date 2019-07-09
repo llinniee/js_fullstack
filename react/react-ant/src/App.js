@@ -7,10 +7,34 @@ import 'antd/dist/antd.css';
 
 const size = 'large';
 class App extends Component {
-  state = {}
+  constructor(props) {
+    super(props);
+    this.FunctionRef = null;
+    this.objectRef = React.createRef();
+    this.inputRef = React.createRef();
+  }
+  state = {
+    value: ''
+  }
   componentDidMount() {
     //组件挂载在页面上
     this.refs.strRef.innerHTML = 'String ref'
+    // 通过原生js操作dom
+    this.FunctionRef.innerHTML = 'Function ref'
+    this.objectRef.current.innerHTML = 'Object ref'
+    this.FunctionRef.addEventListener('click', () => {
+      console.log('function ref clicked')
+    })
+  }
+  handPrint1 = () => {
+    console.log(this.inputRef.current.value)
+  }
+  handleInputChange = (e) => {
+    let value = e.target.value
+    value = value.slice(0, 10);
+    this.setState({
+      value
+    })
   }
   render() {
     return (
@@ -63,6 +87,19 @@ class App extends Component {
           </TouchableOpacity>
         </div>
         <h1 ref="strRef"></h1>
+        <h1 ref={this.objectRef}></h1>
+        <h1 ref={(node) => {
+          this.FunctionRef = node;
+        }}></h1>
+        {/* 非受控 */}
+        <input type="text" ref={this.inputRef} />
+        <button onClick={this.handPrint1}>btn1</button>
+        {/* 受控 
+        value
+        state 来源单一 value 应该来自于state
+        */}
+        <input type="text" onChange={this.handleInputChange} value={this.state.value}/>
+        <button onClick={this.handPrint1}>btn2</button>
       </div>
     );
   }
