@@ -1,6 +1,16 @@
 import React from 'react';
 import logo from './logo.svg';
+import toast from './toast/toast'
 import './App.css';
+
+// toast: {
+//   success: ()  => {}
+//   loading: () => {}
+// }
+
+const openNotificationWithIcon = (type) => {
+  toast[type]('message')
+}
 
 function App() {
   return (
