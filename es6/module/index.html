@@ -7,20 +7,11 @@
   <title>Document</title>
 </head>
 <body>
-  <script>
-  class Foo {
-    foo() {
-
-    }
-    bar = () => {
-
-    }
-  } 
-  
-  const a = new Foo();
-  console.log(a)
-  // bar 是属性 
-  // foo是原型对象的一个方法
+  <script type="module">
+  import obj from './a.js'
+  const { a, b} = obj
+  // import {a, b} from './a.js'错误用法
+  import { c, d } from './a.js'
   </script>
 </body>
 </html>
