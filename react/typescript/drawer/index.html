@@ -40,9 +40,25 @@
   </script>
   <script>
     // 复用
+    const container = document.getElementById('container')
+    const actionContainer = document.getElementById('action-container')
+    const action = document.getElementById('action')
     const drawer = new Drawer({
-      
+      enterDOM: container,
+      leaveDOM: actionContainer
     })
+    let state = true;
+    if (action) {
+      action.addEventListener('click', () => {
+        if(state) {
+          state = false;
+          drawer.enter();
+        } else {
+          state = true;
+          drawer.leave();
+        }
+      })
+    }
   </script>
 </body>
 </html>
