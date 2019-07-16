@@ -35,6 +35,12 @@ class Count extends Component {
   handleDe = () => {
     store.dispatch({ type: 'DECREMENT'})
   }
+  handleAddFilm = () => {
+    store.dispatch({ 
+      type: 'ADD_FILM',
+      film: {name: '狮子王'}
+    })
+  }
   render() {
     return (
        <div>
