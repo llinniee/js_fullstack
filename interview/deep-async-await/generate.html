@@ -19,13 +19,39 @@
     } 
      // 惰性的
     var g = test()
+    let gn = g.next();
+    while(!gn.done) {
+      gn = g.next(gn.value);
+    }
+    autoRun1(test1)
+    autoRun1(test)
+
+    function autoRun1(generateFun) {
+      var g = generateFun();
+      function next(data) {
+        var result = g.next(data);
+        if (result.done) return;
+        next(result.value);
+      }
+      next()
+    }
+
     // 生成一个 对象 { next }
     // 调用next 一步一步执行
     // g.next()
     // g.next()
     // g.next()
     // 让generate 函数自己全部执行完
-    
+    (async function () {
+      let a = await 1;
+      let b = await 2;
+    })()
+    _asyncToGenerator(
+      function () {
+      let a = yield 1;
+      let b = yield 2;
+    }
+    )
   </script>
 </body>
 </html>
