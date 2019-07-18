@@ -42,16 +42,45 @@
     // g.next()
     // g.next()
     // 让generate 函数自己全部执行完
-    (async function () {
-      let a = await 1;
-      let b = await 2;
-    })()
+    // (async function () {
+    //   let a = await 1;
+    //   let b = await 2;
+    // })()
+    let fooPromise = function () {
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {resolve()}, 1000)
+      })
+    }
     _asyncToGenerator(
-      function () {
-      let a = yield 1;
+      function* () {
+      let a = yield fooPromise();
+      console.log('_asyncToGenerator a', a)
+      let c = yield barPromisr();
       let b = yield 2;
     }
     )
+    // fooPromise().then(() => {
+    //   let b = yield 2;
+    // })
+    function _asyncToGenerator(generateFun) {
+      return new Promise((resolve,reject) => {
+        let gen = generateFun();
+        // key = next
+        function step(key, arg) {
+          let info = {};
+          // info = { value, done }
+          info = gen[key](arg);
+          if (info.done) {
+            resolve()
+          } else {
+            return Promise.resolve(info.value).then((v) => {
+              return step('next', v)
+            })
+          }
+        };
+        step('next')
+      })
+    }
   </script>
 </body>
 </html>
