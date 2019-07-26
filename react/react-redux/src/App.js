@@ -1,26 +1,27 @@
 import React from 'react';
+import { connect } from 'react-redux'
 import logo from './logo.svg';
+import APP from './component/APP'
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
 
-export default App;
+// mapStateToProps
+const a = (state) => {
+  // 过滤一下
+  return {
+    commentList: state
+  }
+}
+// mapDispatchToProps
+const b = (dispatch) => {
+  return {
+    addComment: (userName, content) => {
+      dispatch({
+        type: 'ADD_COMMENT',
+        userName,
+        content
+      })
+    }
+  }
+}
+export default connect(a, b)(App);
