@@ -23,7 +23,7 @@ export default {
   },
 }
 
-</script>
+</script>>
 
 <style lang="stylus" scoped>
   .md-example-child-result-page-3
