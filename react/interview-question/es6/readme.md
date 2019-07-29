@@ -30,7 +30,15 @@ var 有变量提升的能力 let const 不会到顶级对象，使用的变量�
 - ... 展开运算符
 - 终于支持原生的class关键字了，js  有了传统面向对象的写法，extends 不过只是语法糖，
   底层还是基于原型的面向对象
-  
+
+- promise 为js提供了异步解决方案，回避了回调地狱(then) 以代码的书写和执行是一样的
+- 更棒的异步解决方案 es7的async await
+  koa 就是基于async await 快速取代了express 的江湖地位
+
+- vue react响应式编程依赖的proxy
+  difineProperty 监听对象的改变，做一些事情
+- es6 提供了新的数据类型，Symbol
+
 
 
 

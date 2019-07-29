@@ -16,3 +16,19 @@ var pool = mysql.createPool({
 })
 
 // 开始请求
+
+router.post('/', function(req, res, next) {
+  let userName = req.body.userName
+  let password = req.body.password
+  // 从数据库查找数据， 最后返回给前端
+  pool.query(`SELECT * FROM user where userName = ${userName}`, 
+  function(err, result, fields) {
+    if (err) {
+      data.code = 500
+      data.msg = err
+    }
+    if (result[0].password === password) {
+      
+    }
+  }
+})
