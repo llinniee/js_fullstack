@@ -103,7 +103,18 @@ export default {
       speedNow: 1, 
       kcalNow: 1, 
       markText: '', //备注 
+      tripType: '徒步', //出行方式
     };
+  },
+  mounted() {
+    this.tripType = this.$route.params.tripType
+    if(!this.tripType) {
+      this.$route.push({
+        path: '/trip'
+      })
+    }else {
+      this.createTrip()
+    }
   },
   methods: {
     popupShowOnClick() {},
@@ -129,6 +140,23 @@ export default {
           buttonOffset: new window.AMap.Pixel(100, 20), // 定位按钮与设置的停靠位置的偏移量，默认：Pixel(10, 20)
           zoomToAccuracy: true // 定位成功后是否自动调整地图视野到定位点
         })
+        // 定位插件
+        that.map.addControl(geolocation)
+        geolocation.getCurrentPosition(function(status, result) {
+          // Toast.hide()
+        })
+        // 返回定位信息
+        window.AMap.event.addListener(
+          geolocation,
+          'complete',
+          that.localOnComplete
+        )
+        window.AMap.event.addListener(geolocation, 'error', that.localOnError) // 返回定位出错信息
+        // 罗盘插件---------------------------------------------------------
+        that.map.addControl(new window.AMap.ControlBar())
+      })
+      this.map.on('complete', function() {
+        console.log('地图加载完成')
       })
     }
   }
