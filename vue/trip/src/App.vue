@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <!-- <img src="./assets/logo.png"> -->
     <router-view/>
   </div>
 </template>
@@ -12,6 +11,24 @@ export default {
 </script>
 
 <style>
+@import "style/reset.css";
+.box {
+  width: 100%;
+  height: calc(100vh-100px);
+  overflow: auto;
+  position: relative;
+  color: #555555;
+  font-size: 24px;
+}
+.text-container {
+  background: #fff;
+}
+.fademap-enter {
+  opacity: 0;
+}
+.fademap-enter-active {
+  transition: all 0.2s;
+}
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
