@@ -61,7 +61,7 @@ export default {
         //存到vuex里面
         this.setUser(this.userData)
         Toast.succeed(`欢迎回来，${this.userData.name}`, 1500)
-        this.$router.push({path:'/trip'})
+        this.$router.push({path: '/trip'})
       })
     },
     ...mapActions(['setUser', 'setUserData'])
