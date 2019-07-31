@@ -2,11 +2,12 @@
 2. touchStart touchMove touchEnd
 3. 拖拽的时候改变width left
 
-js
-new Progress({
+```js
+new Progress('selector', {
   onDrag: () => {},
   onDragStart: () => {},
   onDragEnd: () => {},
   progress: 0.5,
   disableDrag: false
 })
+```

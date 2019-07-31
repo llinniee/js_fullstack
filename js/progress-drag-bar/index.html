@@ -8,6 +8,14 @@
   <link rel="stylesheet" href="./progress.css">
 </head>
 <body>
-  <script src="./progress.js"></script>
+  <div class="progress1">
+    
+  </div>
+  <script type="module">
+    import Progress from './progress.js'
+    new Progress('#progress1', {
+      progress: 0.5
+    })
+  </script>
 </body>
 </html>
