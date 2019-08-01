@@ -19,7 +19,7 @@ function bindData() {
   // 会返回一个由一个给定对象的自身可枚举属性的数组
   Object.keys(a).map(key => {
     let v = a[key]
-    Object.defineProperties(a, key, {
+    Object.defineProperty(a, key, {
       get() { //读取属性时调用的方法
         console.log('正在读取a里面的值')       
         return v
@@ -33,5 +33,4 @@ function bindData() {
 }
 
 bindData()
-
-a.b = 3
+a.b = 11
